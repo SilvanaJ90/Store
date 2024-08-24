@@ -14,6 +14,11 @@ GRANT CONNECT ON DATABASE "elegance_db" TO "elegance_dev";
 GRANT ALL PRIVILEGES ON DATABASE "elegance_db" TO "elegance_dev";
 
 -- Insertar productos de aretes
+
+INSERT INTO myapp_category(id, name, description) VALUES 
+(1, 'Aretes', 'aretes de golfy, plata etc'),
+(2, 'collares', 'collares de golfy, plata etc');
+
 INSERT INTO myapp_product (id, name, description, price, available_units, image, brand, category_id) VALUES
 (1, 'Aretes 1', 'Descripción para aretes 1', 10.00, 50, '/product_images/aretes/1.jpeg', 'Brand A', 1),
 (2, 'Aretes 2', 'Descripción para aretes 2', 12.00, 60, '/product_images/aretes/2.jpeg', 'Brand B', 1),
