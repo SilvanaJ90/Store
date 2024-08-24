@@ -62,3 +62,4 @@ class User(AbstractBaseUser):
 
     def set_password(self, raw_password):
         self.password = make_password(raw_password)
+
