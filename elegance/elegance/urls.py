@@ -1,12 +1,12 @@
 """
 URL configuration for elegance project.
 
-The `urlpatterns` list routes URLs to views. For more information please see:
+The `urlpatterns` list routes URLs to  For more information please see:
     https://docs.djangoproject.com/en/5.1/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+    2. Add a URL to urlpatterns:  path('', home, name='home')
 Class-based views
     1. Add an import:  from other_app.views import Home
     2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
@@ -24,7 +24,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
-from myapp.views import index
+from myapp.views import index, cart, dashboard, order_complete, place_order,register, search_result, signin, store, product_detail
 
 
 # Define the API schema
@@ -42,7 +42,19 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
-    path('', index, name='home'), # Path to the server root
+    path('index', index, name='home'), 
+    path('', index, name='index'), # Path to the server root
+    path('cart/', cart, name='cart'),
+    path('dashboard/', dashboard, name='dashboard'),
+    path('order-complete/', order_complete, name='order_complete'),
+    path('place-order/', place_order, name='place_order'),
+    path('product-detail/', product_detail, name='product_detail'),
+    path('product/<int:product_id>/', product_detail, name='product-detail'),
+    path('register/', register, name='register'),
+    path('search-result/', search_result, name='search_result'),
+    path('signin/', signin, name='signin'),
+    path('store/', store, name='store'),
+
     path('admin/', admin.site.urls),
     path('api/v1/', include('myapp.urls')),
     path('media/<path:path>/', serve, {'document_root': settings.MEDIA_ROOT}),
@@ -52,6 +64,7 @@ urlpatterns = [
     # Routes for documentation
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

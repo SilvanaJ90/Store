@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -8,24 +10,24 @@
 
 <title>GreatKart | One of the Biggest Online Shopping Platform</title>
 
-<link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link href="static/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
 
 <!-- jQuery -->
-<script src="js/jquery-2.0.0.min.js" type="text/javascript"></script>
+<script src="static/js/jquery-2.0.0.min.js" type="text/javascript"></script>
 
 <!-- Bootstrap4 files-->
-<script src="js/bootstrap.bundle.min.js" type="text/javascript"></script>
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+<script src="static/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
 
 <!-- Font awesome 5 -->
-<link href="fonts/fontawesome/css/all.min.css" type="text/css" rel="stylesheet">
+<link href="static/fonts/fontawesome/css/all.min.css" type="text/css" rel="stylesheet">
 
 <!-- custom style -->
-<link href="css/ui.css" rel="stylesheet" type="text/css"/>
-<link href="css/responsive.css" rel="stylesheet" media="only screen and (max-width: 1200px)" />
+<link rel="stylesheet" href="{% static 'css/ui.css' %}">
+<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
 
 <!-- custom javascript -->
-<script src="js/script.js" type="text/javascript"></script>
+<script src="static/js/script.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 /// some script
@@ -50,26 +52,11 @@ $(document).ready(function() {
   </button>
   <div class="collapse navbar-collapse" id="navbarTop4">
     <ul class="navbar-nav mr-auto">
-    	<li class="nav-item dropdown">
-		 	<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">   Language </a>
-		    <ul class="dropdown-menu small">
-				<li><a class="dropdown-item" href="#">English</a></li>
-				<li><a class="dropdown-item" href="#">Arabic</a></li>
-				<li><a class="dropdown-item" href="#">Russian </a></li>
-		    </ul>
-		</li>
-		<li class="nav-item dropdown">
-			<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"> USD </a>
-			<ul class="dropdown-menu small">
-				<li><a class="dropdown-item" href="#">EUR</a></li>
-				<li><a class="dropdown-item" href="#">AED</a></li>
-				<li><a class="dropdown-item" href="#">RUBL </a></li>
-		    </ul>
-		</li>
+
     </ul>
     <ul class="navbar-nav">
 		<li><a href="#" class="nav-link"> <i class="fa fa-envelope"></i> Email </a></li>
-		<li><a href="#" class="nav-link"> <i class="fa fa-phone"></i> Call us </a></li>
+		<li><a href="#" class="nav-link"> <i class="fa fa-phone"></i> Llámanos </a></li>
 	</ul> <!-- list-inline //  -->
   </div> <!-- navbar-collapse .// -->
 </div> <!-- container //  -->
@@ -79,26 +66,26 @@ $(document).ready(function() {
 	<div class="container">
 <div class="row align-items-center">
 	<div class="col-lg-2 col-md-3 col-6">
-		<a href="./" class="brand-wrap">
-			<img class="logo" src="./images/logo.png">
+		<a href="{% url 'index' %}" class="brand-wrap">
+			<img class="logo" src="{% static 'images/logo.png' %}">
 		</a> <!-- brand-wrap.// -->
 	</div>
 	<div class="col-lg col-sm col-md col-6 flex-grow-0">
 		<div class="category-wrap dropdown d-inline-block float-right">
 			<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> 
-				<i class="fa fa-bars"></i> All category 
+				<i class="fa fa-bars"></i> Categoría 
 			</button>
 			<div class="dropdown-menu">
-				<a class="dropdown-item" href="#">Machinery / Mechanical Parts / Tools </a>
-				<a class="dropdown-item" href="#">Consumer Electronics / Home Appliances </a>
-				<a class="dropdown-item" href="#">Auto / Transportation</a>
-				<a class="dropdown-item" href="#">Apparel / Textiles / Timepieces </a>
-				<a class="dropdown-item" href="#">Home & Garden / Construction / Lights </a>
-				<a class="dropdown-item" href="#">Beauty & Personal Care / Health </a> 
+				<a class="dropdown-item" href="#">Anillos </a>
+				<a class="dropdown-item" href="#">Aretes </a>
+				<a class="dropdown-item" href="#">Pulseras </a>
+				<a class="dropdown-item" href="#">Collares </a>
+				<a class="dropdown-item" href="#">Relojes </a>
+				<a class="dropdown-item" href="#">Complementos </a> 
 			</div>
 		</div>  <!-- category-wrap.// -->
 	</div> <!-- col.// -->
-	<a href="./store.html" class="btn btn-outline-primary">Store</a>
+	<a href="{% url 'store' %}" class="btn btn-outline-primary">Tienda</a>
 	<div class="col-lg  col-md-6 col-sm-12 col">
 		<form action="#" class="search">
 			<div class="input-group w-100">
@@ -115,13 +102,12 @@ $(document).ready(function() {
 	<div class="col-lg-3 col-sm-6 col-8 order-2 order-lg-3">
 				<div class="d-flex justify-content-end mb-3 mb-lg-0">
 					<div class="widget-header">
-						<small class="title text-muted">Welcome guest!</small>
+						<small class="title text-muted">Bienvenido!</small>
 						<div> 
-							<a href="./signin.html">Sign in</a> <span class="dark-transp"> | </span>
-							<a href="./register.html"> Register</a>
+							<a href="{% url 'signin' %}">Entre a Elegance</a> 
 						</div>
 					</div>
-					<a href="./cart.html" class="widget-header pl-3 ml-3">
+					<a href="{% url 'cart' %}" class="widget-header pl-3 ml-3">
 						<div class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></div>
 						<span class="badge badge-pill badge-danger notify">0</span>
 					</a>
@@ -140,7 +126,7 @@ $(document).ready(function() {
 <!-- ========================= SECTION PAGETOP ========================= -->
 <section class="section-pagetop bg">
 <div class="container">
-	<h2 class="title-page">Our Store</h2>
+	<h2 class="title-page">Nuestra tienda</h2>
 	
 </div> <!-- container //  -->
 </section>
@@ -158,20 +144,19 @@ $(document).ready(function() {
 		<header class="card-header">
 			<a href="#" data-toggle="collapse" data-target="#collapse_1" aria-expanded="true" class="">
 				<i class="icon-control fa fa-chevron-down"></i>
-				<h6 class="title">Categories</h6>
+				<h6 class="title">Categorías</h6>
 			</a>
 		</header>
 		<div class="filter-content collapse show" id="collapse_1" style="">
 			<div class="card-body">
 				
 				<ul class="list-menu">
-				<li><a href="#">People  </a></li>
-				<li><a href="#">Watches </a></li>
-				<li><a href="#">Cinema  </a></li>
-				<li><a href="#">Clothes  </a></li>
-				<li><a href="#">Home items </a></li>
-				<li><a href="#">Animals</a></li>
-				<li><a href="#">People </a></li>
+				<li><a href="#">Anillos  </a></li>
+				<li><a href="#">Aretes </a></li>
+				<li><a href="#">Pulseras </a></li>
+				<li><a href="#">Collares </a></li>
+				<li><a href="#">Relojes</a></li>
+				<li><a href="#">Complementos</a></li>
 				</ul>
 
 			</div> <!-- card-body.// -->
@@ -264,165 +249,60 @@ $(document).ready(function() {
 </header><!-- sect-heading -->
 
 <div class="row">
-	<div class="col-md-4">
-		<figure class="card card-product-grid">
-			<div class="img-wrap"> 
-				
-				<img src="images/items/1.jpg">
-				
-			</div> <!-- img-wrap.// -->
-			<figcaption class="info-wrap">
-				<div class="fix-height">
-					<a href="./product-detail.html" class="title">Great item name goes here</a>
-					<div class="price-wrap mt-2">
-						<span class="price">$1280</span>
-						<del class="price-old">$1980</del>
-					</div> <!-- price-wrap.// -->
-				</div>
-				<a href="#" class="btn btn-block btn-success">Added to cart </a>
-			</figcaption>
-		</figure>
-	</div> <!-- col.// -->
+    {% for product in page_obj %}
+    <div class="col-md-4">
+        <figure class="card card-product-grid">
+            <div class="img-wrap">
+				<img src="{{ product.image.url }}" alt="{{ product.name }}"> 
 
-	<div class="col-md-4">
-		<figure class="card card-product-grid">
-			<div class="img-wrap"> 
-				<img src="images/items/2.jpg">
-				
-			</div> <!-- img-wrap.// -->
-			<figcaption class="info-wrap">
-				<div class="fix-height">
-					<a href="./product-detail.html" class="title">Product name goes here just for demo item</a>
-					<div class="price-wrap mt-2">
-						<span class="price">$1280</span>
-					</div> <!-- price-wrap.// -->
-				</div>
-				<a href="#" class="btn btn-block btn-primary">Add to cart </a>	
-			</figcaption>
-		</figure>
-	</div> <!-- col.// -->
-
-	<div class="col-md-4">
-		<figure class="card card-product-grid">
-			<div class="img-wrap"> 
-				<img src="images/items/3.jpg">
-				
-			</div> <!-- img-wrap.// -->
-			<figcaption class="info-wrap">
-				<div class="fix-height">
-					<a href="./product-detail.html" class="title">Product name goes here just for demo item</a>
-					<div class="price-wrap mt-2">
-						<span class="price">$1280</span>
-					</div> <!-- price-wrap.// -->
-				</div>
-				<a href="#" class="btn btn-block btn-primary">Add to cart </a>	
-			</figcaption>
-		</figure>
-	</div> <!-- col.// -->
-
-	<div class="col-md-4">
-		<figure class="card card-product-grid">
-			<div class="img-wrap"> 
-				<img src="images/items/4.jpg">
-				
-			</div> <!-- img-wrap.// -->
-			<figcaption class="info-wrap">
-				<div class="fix-height">
-					<a href="./product-detail.html" class="title">Product name goes here just for demo item</a>
-					<div class="price-wrap mt-2">
-						<span class="price">$1280</span>
-					</div> <!-- price-wrap.// -->
-				</div>
-				<a href="#" class="btn btn-block btn-primary">Add to cart </a>	
-			</figcaption>
-		</figure>
-	</div> <!-- col.// -->
-
-	<div class="col-md-4">
-		<figure class="card card-product-grid">
-			<div class="img-wrap"> 
-				<img src="images/items/5.jpg">
-				
-			</div> <!-- img-wrap.// -->
-			<figcaption class="info-wrap">
-				<div class="fix-height">
-					<a href="./product-detail.html" class="title">Product name goes here just for demo item</a>
-					<div class="price-wrap mt-2">
-						<span class="price">$1280</span>
-					</div> <!-- price-wrap.// -->
-				</div>
-				<a href="#" class="btn btn-block btn-primary">Add to cart </a>	
-			</figcaption>
-		</figure>
-	</div> <!-- col.// -->
-
-	<div class="col-md-4">
-		<figure class="card card-product-grid">
-			<div class="img-wrap"> 
-				<img src="images/items/6.jpg">
-				
-			</div> <!-- img-wrap.// -->
-			<figcaption class="info-wrap">
-				<div class="fix-height">
-					<a href="./product-detail.html" class="title">Product name goes here just for demo item</a>
-					<div class="price-wrap mt-2">
-						<span class="price">$1280</span>
-					</div> <!-- price-wrap.// -->
-				</div>
-				<a href="#" class="btn btn-block btn-primary">Add to cart </a>	
-			</figcaption>
-		</figure>
-	</div> <!-- col.// -->
-
-	<div class="col-md-4">
-		<figure class="card card-product-grid">
-			<div class="img-wrap"> 
-				<img src="images/items/7.jpg">
-				
-			</div> <!-- img-wrap.// -->
-			<figcaption class="info-wrap">
-				<div class="fix-height">
-					<a href="./product-detail.html" class="title">Product name goes here just for demo item</a>
-					<div class="price-wrap mt-2">
-						<span class="price">$1280</span>
-					</div> <!-- price-wrap.// -->
-				</div>
-				<a href="#" class="btn btn-block btn-primary">Add to cart </a>	
-			</figcaption>
-		</figure>
-	</div> <!-- col.// -->
-
-	<div class="col-md-4">
-		<figure class="card card-product-grid">
-			<div class="img-wrap"> 
-				<img src="images/items/1.jpg">
-				
-			</div> <!-- img-wrap.// -->
-			<figcaption class="info-wrap">
-				<div class="fix-height">
-					<a href="./product-detail.html" class="title">Product name goes here just for demo item</a>
-					<div class="price-wrap mt-2">
-						<span class="price">$1280</span>
-					</div> <!-- price-wrap.// -->
-				</div>
-				<a href="#" class="btn btn-block btn-primary">Add to cart </a>	
-			</figcaption>
-		</figure>
-	</div> <!-- col.// -->
+            </div> <!-- img-wrap.// -->
+            <figcaption class="info-wrap">
+                <div class="fix-height">
+                    <a href="{% url 'product-detail' product.id %}" class="title">{{ product.name }}</a>
+                    <div class="price-wrap mt-2">
+                        <span class="price">${{ product.price }}</span>
+                        {% if product.old_price %}
+                        <del class="price-old">${{ product.old_price }}</del>
+                        {% endif %}
+                    </div> <!-- price-wrap.// -->
+                </div>
+                <a href="#" class="btn btn-block btn-primary">Add to cart</a>
+            </figcaption>
+        </figure>
+    </div> <!-- col.// -->
+    {% endfor %}
 </div> <!-- row end.// -->
 
-
-<nav class="mt-4" aria-label="Page navigation sample">
+<!-- Paginación -->
+<nav class="mt-4" aria-label="Page navigation">
   <ul class="pagination">
+    {% if page_obj.has_previous %}
+    <li class="page-item"><a class="page-link" href="?page=1">First</a></li>
+    <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+    {% else %}
+    <li class="page-item disabled"><a class="page-link" href="#">First</a></li>
     <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+    {% endif %}
+
+    {% for num in page_obj.paginator.page_range %}
+    {% if num == page_obj.number %}
+    <li class="page-item active"><a class="page-link" href="#">{{ num }}</a></li>
+    {% else %}
+    <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+    {% endif %}
+    {% endfor %}
+
+    {% if page_obj.has_next %}
+    <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+    <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last</a></li>
+    {% else %}
+    <li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
+    <li class="page-item disabled"><a class="page-link" href="#">Last</a></li>
+    {% endif %}
   </ul>
 </nav>
 
-	</main> <!-- col.// -->
+</main> <!-- col.// -->
 
 </div>
 
@@ -442,8 +322,6 @@ $(document).ready(function() {
 	</div><!-- //container -->
 </footer>
 <!-- ========================= FOOTER END // ========================= -->
-
-
 
 </body>
 </html>
