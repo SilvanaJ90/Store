@@ -20,4 +20,6 @@ urlpatterns = [
     path('users/login/', views.login, name='login'),
     path('protected/', views.protected, name='protected'),
     path('logout/', views.logout, name='logout'),
+
+    
 ]
