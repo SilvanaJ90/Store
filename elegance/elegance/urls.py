@@ -24,7 +24,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
-from myapp.views import index, cart, dashboard, order_complete, place_order,register, search_result, signin, store, product_detail, categories, products
+from myapp.views import index, cart, dashboard, order_complete, place_order,register, search_result, signin, store, product_detail, categories, products, get_products, CategoryListView
 
 
 # Define the API schema
@@ -46,6 +46,9 @@ urlpatterns = [
     path('', index, name='index'), # Path to the server root
     path('cart/', cart, name='cart'),
     path('admin-categories/', categories, name='admin_categories'),
+    
+    path('categories/<int:category_id>/products/', get_products, name='get_products'),
+
     path('admin-products/', products, name='admin_products'),
     path('dashboard/', dashboard, name='dashboard'),
     path('order-complete/', order_complete, name='order_complete'),
@@ -56,7 +59,6 @@ urlpatterns = [
     path('search-result/', search_result, name='search_result'),
     path('signin/', signin, name='signin'),
     path('store/', store, name='store'),
-
     path('admin/', admin.site.urls),
     path('api/v1/', include('myapp.urls')),
     path('media/<path:path>/', serve, {'document_root': settings.MEDIA_ROOT}),
