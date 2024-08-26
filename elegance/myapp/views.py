@@ -20,9 +20,6 @@ def index(request):
     products = Product.objects.all()
     return render(request, 'index.html', {'products': products})
 
-def redirect_to_index(request):
-    return redirect('/')
-
 def cart(request):
     return render(request, 'cart.html')
 
@@ -54,6 +51,12 @@ def store(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     return render(request, 'store.html', {'page_obj': page_obj})
+
+def categories(request):
+    return render(request, 'admin-categories.html')
+
+def products(request):
+    return render(request, 'admin-products.html')
 
 class CategoryListView(APIView):
     """

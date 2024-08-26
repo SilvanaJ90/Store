@@ -9,7 +9,7 @@ $(document).ready(function () {
     };
 
     $.ajax({
-      url: "http://127.0.0.1:5001/api/v1/users/register",
+      url: "http://127.0.0.1:8000/api/v1/users/register",
       type: "POST",
       data: JSON.stringify(formData),
       contentType: "application/json; charset=utf-8",
@@ -34,7 +34,7 @@ $(document).ready(function () {
           })
           .then((value) => {
             if (value) {
-              window.location.href ="/glab_books/";
+              window.location.href ="http://127.0.0.1:8000/";
             }
           });
         } else {
