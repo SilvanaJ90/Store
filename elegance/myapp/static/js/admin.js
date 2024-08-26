@@ -2,7 +2,7 @@ const d = document,
   $title = d.querySelector("#crud-title");
 
 let app = {
-    backend: 'http://127.0.0.1:5001/api/v1',
+    backend: 'http://127.0.0.1:8000/api/v1',
     table : null,
     init: function() {
         app.initDatatable('#categories');
@@ -62,7 +62,6 @@ let app = {
                 
             ],
             
-        
             buttons: [
 
                 {
@@ -131,7 +130,6 @@ let app = {
         });
     },
     setDataToModal : function(data) {
-
         $('#name').val(data.name);
         $('#description').val(data.description);
     },
@@ -146,7 +144,7 @@ let app = {
     },
     save : function(data) {
         $.ajax({
-            url: app.backend + '/categories',
+            url: app.backend + '/categories/',
             data : JSON.stringify(data),
             method: 'POST',
             dataType : 'json',
@@ -164,10 +162,8 @@ let app = {
                 $("#msg").css("color", "#000");
                 $("#msg").css("background-color", "#fc97a4");
                 $("#msg").css("border", "#000 solid 1px");
-                $("#msg").text(error.error);
                 $("#msg").text('(ERROR) Excede el numero de caracteres permitidos');
                 $("#msg").show();
-
             }
         })
     },
@@ -197,12 +193,11 @@ let app = {
                 $("#msg").show();
             }
         });
-
     },
 
     delete : function(id) {
         $.ajax({
-            url: app.backend + '/categories/'+id,
+            url: app.backend + '/categories/' + id,
             method: 'DELETE',
             dataType : 'json',
             contentType: "application/json; charset=utf-8",
@@ -210,7 +205,7 @@ let app = {
                 $("#msg").css("color", "#000");
                 $("#msg").css("background-color", "#97fcb0");
                 $("#msg").css("border", "#000 solid 1px");
-                $("#msg").text('Se eliminó  la categoría correctamente');
+                $("#msg").text('Se eliminó la categoría correctamente');
                 $("#msg").show();
                 app.table.ajax.reload();
             },
@@ -218,35 +213,28 @@ let app = {
                 $("#msg").css("color", "#000");
                 $("#msg").css("background-color", "#fc97a4");
                 $("#msg").css("border", "#000 solid 1px");
-                $("#msg").text(error.error);
+                $("#msg").text('Error al eliminar la categoría');
                 $("#msg").show();
-
             }
         })
     },
     load_products : function(id) {
         $.ajax({
-            url: app.backend + '/categories/'+id+ '/products',
+            url: app.backend + '/categories/' + id + '/products/',
             method: 'GET',
             dataType : 'json',
             contentType: "application/json; charset=utf-8",
             success : function(data) {
                 window.location.href = 'products?category_id=' + id;
-              
             },
             error : function(error) {
-                $("#msg").text(error.error);
+                $("#msg").text('Error al cargar productos');
                 $("#msg").show();
-
             }
-            
         });
-    },
-    
-
+    }
 };
 
 $(document).ready(function(){
     app.init();
 });
-

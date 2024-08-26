@@ -24,7 +24,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
-from myapp.views import index, cart, dashboard, order_complete, place_order,register, search_result, signin, store, product_detail
+from myapp.views import index, cart, dashboard, order_complete, place_order,register, search_result, signin, store, product_detail, categories, products
 
 
 # Define the API schema
@@ -45,6 +45,8 @@ urlpatterns = [
     path('index', index, name='home'), 
     path('', index, name='index'), # Path to the server root
     path('cart/', cart, name='cart'),
+    path('admin-categories/', categories, name='admin_categories'),
+    path('admin-products/', products, name='admin_products'),
     path('dashboard/', dashboard, name='dashboard'),
     path('order-complete/', order_complete, name='order_complete'),
     path('place-order/', place_order, name='place_order'),

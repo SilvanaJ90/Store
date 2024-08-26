@@ -1,5 +1,5 @@
 let app_products = {
-    backend: 'http://127.0.0.1:5001/api/v1',
+    backend: 'http://127.0.0.1:8000/api/v1',
     table: null,
     init: function() {
         const urlParams = new URLSearchParams(window.location.search);
@@ -42,6 +42,7 @@ let app_products = {
         });
     },
 
+
     initDatatable: function(id, url) {
         app_products.table = $(id).DataTable({
             language: {
@@ -66,21 +67,19 @@ let app_products = {
             },
             ajax: {
                 url: url,
-                dataSrc: ''
+                dataSrc: function(json) {
+                    return json;
+                },
             },
             dom: 'Bfrtip',
             columns: [
-                { data: null, render: function(data, type, full, meta) {
-                    return meta.row + 1;
-                }},
-                { data: 'name' },
-                { data: 'description' },
-                { data: 'price' },
-                { data: 'available_units' },
-                { data: 'image', render: function(data) {
-                    return `<img src="${data}" alt="Product Image" style="width: 50px; height: auto;">`;
-                }},
-                { data: 'brand' }
+                {"data": "id"},
+                {"data": "name"},
+                {"data": "description"},
+                {"data": "price"},
+                {"data": "available_units"},
+                {"data": "image"},
+                {"data": "brand"}
             ],
             buttons: [
                 {
