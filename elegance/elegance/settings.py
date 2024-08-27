@@ -14,7 +14,8 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 
-load_dotenv()
+
+load_dotenv("../../.env")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -147,8 +148,8 @@ DATABASES = {
         'NAME': f'{os.getenv("POSTGRES_DB")}',
         'USER': f'{os.getenv("POSTGRES_USER")}',
         'PASSWORD': f'{os.getenv("POSTGRES_PASSWORD")}',
-        'HOST': f'{os.getenv("POSTGRES_HOST"), "localhost"}',
-        'PORT': f'{os.getenv("POSTGRES_PORT", "5432")}',
+        'HOST': f'{os.getenv("POSTGRES_HOST", "127.0.0.1")}',
+        'PORT': f'{os.getenv("POSTGRES_PORT", "5432")}'
     }
 }
 
