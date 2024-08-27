@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from datetime import timedelta
 from pathlib import Path
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -141,11 +144,11 @@ WSGI_APPLICATION = 'elegance.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'elegance_db',
-        'USER': 'elegance_dev',
-        'PASSWORD': 'elegance_pwd',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': f'{os.getenv("POSTGRES_DB")}',
+        'USER': f'{os.getenv("POSTGRES_USER")}',
+        'PASSWORD': f'{os.getenv("POSTGRES_PASSWORD")}',
+        'HOST': f'{os.getenv("POSTGRES_HOST"), "localhost"}',
+        'PORT': f'{os.getenv("POSTGRES_PORT", "5432")}',
     }
 }
 
