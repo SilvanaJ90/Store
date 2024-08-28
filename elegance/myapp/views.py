@@ -7,18 +7,29 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.exceptions import NotFound
 from rest_framework.decorators import api_view
-from .models import Product, Category, User
-from .serializers import ProductSerializer, CategorySerializer, UserSerializer, RegisterSerializer
+from .models import Product, Category, User, Comments
+from .serializers import ProductSerializer, CategorySerializer, UserSerializer, RegisterSerializer, CommentSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
 from django.shortcuts import redirect
+from rest_framework.permissions import IsAuthenticated
 
 
 def index(request):
     products = Product.objects.all()
-    return render(request, 'index.html', {'products': products})
+
+    # Check if the user is authenticated
+    if request.user.is_authenticated:
+        user_name = request.user.first_name or request.user.username
+    else:
+        user_name = "Bienvenido"
+
+    return render(request, 'index.html', {
+        'products': products,
+        'user_name': user_name
+    })
 
 def cart(request):
     return render(request, 'cart.html')
@@ -34,7 +45,12 @@ def place_order(request):
 
 def product_detail(request, product_id):
     product = get_object_or_404(Product, id=product_id)
-    return render(request, 'product-detail.html', {'product': product})
+    comments = Comments.objects.filter(product=product).order_by('-created_at')
+    
+    return render(request, 'product-detail.html', {
+        'product': product,
+        'comments': comments,
+    })
 
 def register(request):
     return render(request, 'register.html')
@@ -258,3 +274,15 @@ def logout(request):
     response = Response({'logout': True}, status=status.HTTP_200_OK)
     response.delete_cookie('access_token')
     return response
+
+class CommentCreateView(APIView):
+    def post(self, request, product_id):
+        product = Product.objects.get(id=product_id)
+        serializer = CommentSerializer(data=request.data)
+        
+        if serializer.is_valid():
+            
+            serializer.save(product=product)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

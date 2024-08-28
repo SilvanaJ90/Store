@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Product, Category, User
+from .models import Product, Category, User, Comments
 
 
 class ProductSerializer(serializers.ModelSerializer):
@@ -29,3 +29,9 @@ class RegisterSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         user = User.objects.create_user(**validated_data)
         return user
+
+class CommentSerializer(serializers.ModelSerializer):
+    class Meta:
+        Model: Comments
+        fields = ['id', 'product', 'user', 'content', 'created_at']
+        read_only_fields = ['id', 'user', 'created_at']
