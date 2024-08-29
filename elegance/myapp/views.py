@@ -1,7 +1,3 @@
-from django.shortcuts import render
-
-from django.shortcuts import render
-
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -10,11 +6,10 @@ from rest_framework.decorators import api_view
 from .models import Product, Category, User, Comments
 from .serializers import ProductSerializer, CategorySerializer, UserSerializer, RegisterSerializer, CommentSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
-from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
 from django.shortcuts import redirect
-from rest_framework.permissions import IsAuthenticated
+
 
 
 def index(request):
@@ -74,6 +69,17 @@ def categories(request):
 def products(request):
     return render(request, 'admin-products.html')
 
+# Api
+
+@api_view(['GET'])
+def get_all_categories(request):
+    """
+    Retrieves the list of all categories.
+    """
+    categories = Category.objects.all()
+    serializer = CategorySerializer(categories, many=True)
+    return Response(serializer.data, status=status.HTTP_200_OK)
+
 class CategoryListView(APIView):
     """
     Retrieves the list of all category objects
@@ -83,33 +89,57 @@ class CategoryListView(APIView):
         serializer = CategorySerializer(categories, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-class CategoryDetailView(APIView):
+@api_view(['POST'])
+def post_category(request):
     """
-    Retrieves, updates, or deletes a specific category
+    Creates a new category
     """
-    def get_object(self, category_id):
-        try:
-            return Category.objects.get(pk=category_id)
-        except Category.DoesNotExist:
-            raise NotFound(detail="Category not found")
+    serializer = CategorySerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    def get(self, request, category_id, *args, **kwargs):
-        category = self.get_object(category_id)
-        serializer = CategorySerializer(category)
-        return Response(serializer.data, status=status.HTTP_200_OK)
-
-    def delete(self, request, category_id, *args, **kwargs):
-        category = self.get_object(category_id)
+@api_view(['DELETE'])
+def delete_category(request, category_id):
+    """
+    Deletes a category based on id provided
+    """
+    try:
+        category = Category.objects.get(pk=category_id)
         category.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+    except Category.DoesNotExist:
+        return Response({'error': 'Category not found'}, status=status.HTTP_404_NOT_FOUND)
 
-    def put(self, request, category_id, *args, **kwargs):
-        category = self.get_object(category_id)
-        serializer = CategorySerializer(category, data=request.data, partial=True)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_200_OK)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+@api_view(['GET'])
+def get_category(request, category_id):
+    """
+    Retrieves a specific category based on id
+    """
+    try:
+        category = Category.objects.get(pk=category_id)
+    except Category.DoesNotExist:
+        return Response({'error': 'Category not found'}, status=status.HTTP_404_NOT_FOUND)
+
+    serializer = CategorySerializer(category)
+    return Response(serializer.data, status=status.HTTP_200_OK)
+
+@api_view(['PUT'])
+def put_category(request, category_id):
+    """
+    Updates a category
+    """
+    try:
+        category = Category.objects.get(pk=category_id)
+    except Category.DoesNotExist:
+        return Response({'error': 'Category not found'}, status=status.HTTP_404_NOT_FOUND)
+
+    serializer = CategorySerializer(category, data=request.data, partial=True)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
 @api_view(['POST'])
 def post_category(request):
@@ -286,3 +316,28 @@ class CommentCreateView(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['GET'])
+def get_comments_by_product(request, product_id):
+    """
+    Retrieves the list of all comments for a specific product
+    """
+    try:
+        product = Product.objects.get(pk=product_id)
+    except Product.DoesNotExist:
+        return Response({'error': 'Product not found'}, status=status.HTTP_404_NOT_FOUND)
+
+    comments = Comments.objects.filter(product=product).order_by('-created_at')
+    serializer = CommentSerializer(comments, many=True)
+    return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+@api_view(['GET'])
+def get_all_comments(request):
+    """
+    Retrieves the list of all comments
+    """
+    comments = Comments.objects.all().order_by('-created_at')
+    serializer = CommentSerializer(comments, many=True)
+    return Response(serializer.data, status=status.HTTP_200_OK)

@@ -32,6 +32,5 @@ class RegisterSerializer(serializers.ModelSerializer):
 
 class CommentSerializer(serializers.ModelSerializer):
     class Meta:
-        Model: Comments
-        fields = ['id', 'product', 'user', 'content', 'created_at']
-        read_only_fields = ['id', 'user', 'created_at']
+        model = Comments
+        fields = '__all__'  # Puedes usar '__all__' para incluir todos los campos, o listar campos específicos
