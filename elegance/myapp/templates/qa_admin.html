@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EleganceIA</title>
+    <link rel="stylesheet" href="{% static 'css/qa_admin.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>EleganceIA</h1>
+        <div id="chat-box" class="chat-box"></div>
+        <div class="input-box">
+            <input type="text" id="question" placeholder="Escribe tu pregunta...">
+            <button onclick="askQuestion()">Enviar</button>
+        </div>
+    </div>
+
+    <script>
+        async function askQuestion() {
+            const question = document.getElementById('question').value;
+            if (question.trim() === '') return;
+
+            document.getElementById('chat-box').innerHTML += `<p><strong>Usuario:</strong> ${question}</p>`;
+
+            const response = await fetch('{% url "ask_question" %}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ question })
+            });
+
+            const data = await response.json();
+            const answer = data.answer || 'Lo siento, no pude encontrar la respuesta.';
+            document.getElementById('chat-box').innerHTML += `<p><strong>Elegance:</strong> ${answer}</p>`;
+
+            // Limpiar el campo de entrada
+            document.getElementById('question').value = '';
+        }
+    </script>
+</body>
+</html>

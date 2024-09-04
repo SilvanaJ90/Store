@@ -35,7 +35,7 @@ $(document).ready(function () {
         if (response.is_user) {
           window.location.href = "http://127.0.0.1:8000/";
         } else {
-          window.location.href = "http://127.0.0.1:8000/admin-categories/";
+          window.location.href = "http://127.0.0.1:8000/qa_admin/";
         }
       },
       error: function(jqXHR, textStatus, errorThrown) {
