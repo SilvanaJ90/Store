@@ -9,11 +9,13 @@ from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from myapp.views import (
     index, cart, dashboard, order_complete, place_order, register, search_result, signin, store, 
-    product_detail, categories, products, get_products, get_comments_by_product, get_all_comments,
+    product_detail, get_products, get_comments_by_product, get_all_comments,
     post_category, get_category, put_category, delete_category, post_product, put_product, delete_product, 
     get_all_products, get_user, delete_user, register_user, login, protected, logout, get_users, get_product,
     get_all_categories
 )
+from myapp.chatbot_views import ask_question, qa_admin
+
 
 # Define the API schema
 schema_view = get_schema_view(
@@ -42,8 +44,8 @@ urlpatterns = [
     path('search-result/', search_result, name='search_result'),
     path('signin/', signin, name='signin'),
     path('store/', store, name='store'),
-    path('admin-categories/', categories, name='admin_categories'),
-    path('admin-products/', products, name='admin_products'),
+    path('qa_admin/', qa_admin, name='qa_admin'),
+  
 
     # API routes
     path('api/v1/categories/create/', post_category, name='post_category'),  # Create a category (POST)
@@ -77,6 +79,8 @@ urlpatterns = [
 
     # Admin
     path('api/v1/', include('myapp.urls')),
+
+    path('ask_question/', ask_question, name='ask_question'),
 
     # Media files
     path('media/<path:path>/', serve, {'document_root': settings.MEDIA_ROOT}),

@@ -11,7 +11,6 @@ from django.core.paginator import Paginator
 from django.shortcuts import redirect
 
 
-
 def index(request):
     products = Product.objects.all()
 
@@ -63,11 +62,6 @@ def store(request):
     page_obj = paginator.get_page(page_number)
     return render(request, 'store.html', {'page_obj': page_obj})
 
-def categories(request):
-    return render(request, 'admin-categories.html')
-
-def products(request):
-    return render(request, 'admin-products.html')
 
 # Api
 
