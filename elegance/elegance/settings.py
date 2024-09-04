@@ -141,6 +141,8 @@ WSGI_APPLICATION = 'elegance.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# API KEY
+APY_KEY=os.getenv('GOOGLE_API_KEY')
 
 DATABASES = {
     'default': {
@@ -149,7 +151,8 @@ DATABASES = {
         'USER': f'{os.getenv("POSTGRES_USER")}',
         'PASSWORD': f'{os.getenv("POSTGRES_PASSWORD")}',
         'HOST': f'{os.getenv("POSTGRES_HOST", "127.0.0.1")}',
-        'PORT': f'{os.getenv("POSTGRES_PORT", "5432")}'
+        'PORT': f'{os.getenv("POSTGRES_PORT", "5432")}',
+                'URL': f'postgresql://{os.getenv("POSTGRES_USER")}:{os.getenv("POSTGRES_PASSWORD")}@{os.getenv("POSTGRES_HOST", "127.0.0.1")}/{os.getenv("POSTGRES_DB")}'
     }
 }
 
