@@ -25,7 +25,6 @@ Access the API documentation
 
 
 
-
 <h3 align="left">Languages and Tools:</h3>
 <h3 align="left">Backend:</h3>
 <p align="left"> <a href="https://www.djangoproject.com/" target="_blank" rel="noreferrer"> <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue"/> </a> </p>
