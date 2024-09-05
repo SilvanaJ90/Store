@@ -67,6 +67,22 @@ INSERT INTO myapp_product (id, name, description, price, available_units, image,
 (40, 'Collar 40', 'Descripción para collar 40', 20.00, 75, '/product_images/collares/40.jpeg', 'Brand Z', 2, NOW(), NOW()),
 (41, 'Collar 41', 'Descripción para collar 41', 15.00, 55, '/product_images/collares/41.jpeg', 'Brand X', 2, NOW(), NOW());
 
+
+-- Insert usuarios
+INSERT INTO myapp_user (id, last_login, email, password, first_name, last_name, is_active, is_user, created_at, updated_at)
+VALUES 
+(1, NOW(), 'usuario10@example.com', 'password10', 'Paula', 'Ramírez', TRUE, TRUE, NOW(), NOW()),
+(2, NOW(), 'usuario2@example.com', 'password2', 'María', 'Gómez', TRUE, TRUE, NOW(), NOW()),
+(3, NOW(), 'usuario3@example.com', 'password3', 'Carlos', 'López', TRUE, TRUE, NOW(), NOW()),
+(4, NOW(), 'usuario4@example.com', 'password4', 'Ana', 'Martínez', TRUE, TRUE, NOW(), NOW()),
+(5, NOW(), 'usuario5@example.com', 'password5', 'Luis', 'Hernández', TRUE, TRUE, NOW(), NOW()),
+(6, NOW(), 'usuario6@example.com', 'password6', 'Marta', 'Díaz', TRUE, TRUE, NOW(), NOW()),
+(7, NOW(), 'usuario7@example.com', 'password7', 'Pedro', 'Sánchez', TRUE, TRUE, NOW(), NOW()),
+(8, NOW(), 'usuario8@example.com', 'password8', 'Clara', 'Fernández', TRUE, TRUE, NOW(), NOW()),
+(9, NOW(), 'usuario9@example.com', 'password9', 'Diego', 'Torres', TRUE, TRUE, NOW(), NOW()),
+(10, NOW(), 'admin1@example.com', 'admin123', 'admin', 'admin', TRUE, FALSE, NOW(), NOW());
+
+
 -- comentarios producto 1
 INSERT INTO myapp_comments (id, content, created_at, product_id, user_id) VALUES
 (1, 'Este producto es increíble, lo recomiendo mucho!', NOW(), 1, 1),
