@@ -62,6 +62,8 @@ def store(request):
     page_obj = paginator.get_page(page_number)
     return render(request, 'store.html', {'page_obj': page_obj})
 
+def qa_admin(request):
+    return render(request, 'qa_admin.html')
 
 # Api
 
