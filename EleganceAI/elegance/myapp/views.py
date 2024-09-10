@@ -33,7 +33,7 @@ def dashboard(request):
     return render(request, 'dashboard.html')
 
 def order_complete(request):
-    return render(request, 'order_complete.html')
+    return render(request, 'order-complete.html')
 
 def place_order(request):
     return render(request, 'place-order.html')
