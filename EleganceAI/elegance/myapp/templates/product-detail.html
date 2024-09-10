@@ -183,6 +183,26 @@
 	</div> <!-- row.// -->
 </div> <!-- card.// -->
 <!-- ============================ COMPONENT 1 END .// ================================= -->
+<br>
+
+<!-- Productos recomendados -->
+<!-- <section class="recommendations">
+	<h3>Recommended Products</h3>
+	{% if recommendations %}
+		<ul>
+			{% for rec in recommendations %}
+				<li>
+					<h4>{{ rec.name }}</h4>
+					<img src="{{ rec.image }}" alt="{{ rec.name }}">
+					<p><strong>Price:</strong> ${{ rec.price }}</p>
+					<a href="{% url 'product_detail' rec.id %}">View Details</a>
+				</li>
+			{% endfor %}
+		</ul>
+	{% else %}
+		<p>No recommendations available.</p>
+	{% endif %}
+</section> -->
 
 <br>
 
