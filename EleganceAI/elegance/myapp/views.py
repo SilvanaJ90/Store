@@ -9,7 +9,8 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
 from django.shortcuts import redirect
-
+# from product_data_extractor import recommend_products, create_model
+# model = create_model()
 
 def index(request):
     products = Product.objects.all()
