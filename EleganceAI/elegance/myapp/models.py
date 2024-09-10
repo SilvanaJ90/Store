@@ -18,6 +18,11 @@ class Category(models.Model):
 
 class Product(models.Model):
     """Representation of a product"""
+    GENDER_CHOICES = [
+        ('M', 'Men'),
+        ('W', 'Women'),
+        ('U', 'Unisex'),
+    ]
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='products')
     name = models.CharField(max_length=255)
     description = models.TextField(blank=True, null=True)
@@ -25,6 +30,8 @@ class Product(models.Model):
     available_units = models.IntegerField(default=0)
     image = models.ImageField(upload_to='product_images/', default='product_images/logo.png')
     brand = models.CharField(max_length=255)
+    size = models.CharField(max_length=5, null=True, blank=True)
+    color = models.CharField(max_length=20, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

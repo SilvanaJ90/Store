@@ -236,14 +236,14 @@
 			
 		</div>
 </header><!-- sect-heading -->
-
 <div class="row">
     {% for product in page_obj %}
     <div class="col-md-4">
         <figure class="card card-product-grid">
             <div class="img-wrap">
-				<img src="{{ product.image.url }}" alt="{{ product.name }}"> 
-
+                <a href="{% url 'product-detail' product.id %}">
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                </a>
             </div> <!-- img-wrap.// -->
             <figcaption class="info-wrap">
                 <div class="fix-height">
@@ -261,6 +261,8 @@
     </div> <!-- col.// -->
     {% endfor %}
 </div> <!-- row end.// -->
+
+
 
 <!-- Paginación -->
 <nav class="mt-4" aria-label="Page navigation">
