@@ -18,7 +18,14 @@ GRANT ALL PRIVILEGES ON DATABASE "elegance_db" TO "elegance_dev";
 -- Insertar categorías
 INSERT INTO myapp_category (id, name, description, created_at, updated_at) VALUES
 (1, 'Aretes', 'aretes de golfy, plata etc', NOW(), NOW()),
-(2, 'Collares', 'collares de golfy, plata etc', NOW(), NOW());
+(2, 'Collares', 'collares de golfy, plata etc', NOW(), NOW()),
+(3, 'Pulseras', 'pulseras de golfy, plata etc', NOW(), NOW()),
+(4, 'Relojes', 'Relojes de golfy, plata etc', NOW(), NOW()),
+(5, 'Bolsos', 'Bolsos', NOW(), NOW()),
+(6, 'Billetera', 'Billetera', NOW(), NOW()),
+(7, 'Carteras', 'Cartera', NOW(), NOW());
+
+
 
 -- Insertar productos para la categoría 'Aretes'
 INSERT INTO myapp_product (id, name, description, price, available_units, image, brand, category_id, created_at, updated_at) VALUES
@@ -67,6 +74,132 @@ INSERT INTO myapp_product (id, name, description, price, available_units, image,
 (40, 'Collar 40', 'Descripción para collar 40', 20.00, 75, '/product_images/collares/40.jpeg', 'Brand Z', 2, NOW(), NOW()),
 (41, 'Collar 41', 'Descripción para collar 41', 15.00, 55, '/product_images/collares/41.jpeg', 'Brand X', 2, NOW(), NOW());
 
+INSERT INTO myapp_product (id, name, description, price, available_units, image, brand, category_id, created_at, updated_at, color, size) VALUES
+(51, 'Billetera 51', 'Descripción para billetera 51', 15.00, 55, 'product_images/billeteras/mujer/51.jpg', 'Brand X', 6, NOW(), NOW(), 'fucsia', null),
+(52, 'Billetera 52', 'Descripción para billetera 52', 15.00, 55, 'product_images/billeteras/mujer/52.jpg', 'Brand X', 6, NOW(), NOW(), 'negro', null),
+(53, 'Billetera 53', 'Descripción para billetera 53', 15.00, 55, 'product_images/billeteras/mujer/53.jpg', 'Brand X', 6, NOW(), NOW(), 'azul', null),
+(54, 'Billetera 54', 'Descripción para billetera 54', 15.00, 55, 'product_images/billeteras/mujer/54.jpg', 'Brand X', 6, NOW(), NOW(), 'rosa', null),
+(55, 'Billetera 55', 'Descripción para billetera 55', 15.00, 55, 'product_images/billeteras/mujer/55.jpg', 'Brand X', 6, NOW(), NOW(), 'beige', null),
+(56, 'Billetera 56', 'Descripción para billetera 56', 15.00, 55, 'product_images/billeteras/mujer/56.jpg', 'Brand X', 6, NOW(), NOW(), 'beige', null),
+(57, 'Billetera 57', 'Descripción para billetera 57', 15.00, 55, 'product_images/billeteras/mujer/57.jpg', 'Brand X', 6, NOW(), NOW(), 'fucsia', null),
+(58, 'Billetera 58', 'Descripción para billetera 58', 15.00, 55, 'product_images/billeteras/mujer/58.jpg', 'Brand X', 6, NOW(), NOW(), 'rojo', null),
+(59, 'Billetera 59', 'Descripción para billetera 59', 15.00, 55, 'product_images/billeteras/mujer/59.jpg', 'Brand X', 6, NOW(), NOW(), 'verde', null),
+(60, 'Billetera 60', 'Descripción para billetera 60', 15.00, 55, 'product_images/billeteras/mujer/60.jpg', 'Brand X', 6, NOW(), NOW(), 'morado', null),
+(61, 'Billetera 61', 'Descripción para billetera 61', 15.00, 55, 'product_images/billeteras/mujer/61.jpg', 'Brand X', 6, NOW(), NOW(), 'naranja', null),
+(62, 'Billetera 62', 'Descripción para billetera 62', 15.00, 55, 'product_images/billeteras/mujer/62.jpg', 'Brand X', 6, NOW(), NOW(), 'gris', null),
+(63, 'Billetera 63', 'Descripción para billetera 63', 15.00, 55, 'product_images/billeteras/mujer/63.jpg', 'Brand X', 6, NOW(), NOW(), 'blanco', null),
+(64, 'Billetera 64', 'Descripción para billetera 64', 15.00, 55, 'product_images/billeteras/mujer/64.jpg', 'Brand X', 6, NOW(), NOW(), 'dorado', null),
+(65, 'Billetera 65', 'Descripción para billetera 65', 15.00, 55, 'product_images/billeteras/mujer/65.jpg', 'Brand X', 6, NOW(), NOW(), 'plata', null),
+(66, 'Billetera 66', 'Descripción para billetera 66', 15.00, 55, 'product_images/billeteras/mujer/66.jpg', 'Brand X', 6, NOW(), NOW(), 'celeste', null),
+(67, 'Billetera 67', 'Descripción para billetera 67', 15.00, 55, 'product_images/billeteras/mujer/67.jpg', 'Brand X', 6, NOW(), NOW(), 'violeta', null),
+(68, 'Billetera 68', 'Descripción para billetera 68', 15.00, 55, 'product_images/billeteras/mujer/68.jpg', 'Brand X', 6, NOW(), NOW(), 'amarillo', null);
+
+INSERT INTO myapp_product (id, name, description, price, available_units, image, brand, category_id, created_at, updated_at, size) VALUES
+(70, 'Pulsera 70', 'Descripción para pulsera 70', 12.00, 40, 'product_images/pulseras/70.jpg', 'Brand Y', 3, NOW(), NOW(), null),
+(71, 'Pulsera 71', 'Descripción para pulsera 71', 12.00, 40, 'product_images/pulseras/71.jpg', 'Brand Y', 3, NOW(), NOW(), null),
+(72, 'Pulsera 72', 'Descripción para pulsera 72', 12.00, 40, 'product_images/pulseras/72.jpg', 'Brand Y', 3, NOW(), NOW(), null),
+(73, 'Pulsera 73', 'Descripción para pulsera 73', 12.00, 40, 'product_images/pulseras/73.jpg', 'Brand Y', 3, NOW(), NOW(), null),
+(74, 'Pulsera 74', 'Descripción para pulsera 74', 12.00, 40, 'product_images/pulseras/74.jpg', 'Brand Y', 3, NOW(), NOW(), null),
+(75, 'Pulsera 75', 'Descripción para pulsera 75', 12.00, 40, 'product_images/pulseras/75.jpg', 'Brand Y', 3, NOW(), NOW(), null),
+(76, 'Pulsera 76', 'Descripción para pulsera 76', 12.00, 40, 'product_images/pulseras/76.jpg', 'Brand Y', 3, NOW(), NOW(), null),
+(77, 'Pulsera 77', 'Descripción para pulsera 77', 12.00, 40, 'product_images/pulseras/77.jpg', 'Brand Y', 3, NOW(), NOW(), null),
+(78, 'Pulsera 78', 'Descripción para pulsera 78', 12.00, 40, 'product_images/pulseras/78.jpg', 'Brand Y', 3, NOW(), NOW(), null),
+(79, 'Pulsera 79', 'Descripción para pulsera 79', 12.00, 40, 'product_images/pulseras/79.jpg', 'Brand Y', 3, NOW(), NOW(), null),
+(80, 'Pulsera 80', 'Descripción para pulsera 80', 12.00, 40, 'product_images/pulseras/80.jpg', 'Brand Y', 3, NOW(), NOW(), null),
+(81, 'Pulsera 81', 'Descripción para pulsera 81', 12.00, 40, 'product_images/pulseras/81.jpg', 'Brand Y', 3, NOW(), NOW(), null),
+(82, 'Pulsera 82', 'Descripción para pulsera 82', 12.00, 40, 'product_images/pulseras/82.jpg', 'Brand Y', 3, NOW(), NOW(), null),
+(83, 'Pulsera 83', 'Descripción para pulsera 83', 12.00, 40, 'product_images/pulseras/83.jpg', 'Brand Y', 3, NOW(), NOW(), null),
+(84, 'Pulsera 84', 'Descripción para pulsera 84', 12.00, 40, 'product_images/pulseras/84.jpg', 'Brand Y', 3, NOW(), NOW(), null),
+(85, 'Pulsera 85', 'Descripción para pulsera 85', 12.00, 40, 'product_images/pulseras/85.jpg', 'Brand Y', 3, NOW(), NOW(), null),
+(86, 'Pulsera 86', 'Descripción para pulsera 86', 12.00, 40, 'product_images/pulseras/86.jpg', 'Brand Y', 3, NOW(), NOW(), null),
+(87, 'Pulsera 87', 'Descripción para pulsera 87', 12.00, 40, 'product_images/pulseras/87.jpg', 'Brand Y', 3, NOW(), NOW(), null),
+(88, 'Pulsera 88', 'Descripción para pulsera 88', 12.00, 40, 'product_images/pulseras/88.jpg', 'Brand Y', 3, NOW(), NOW(), null),
+(89, 'Pulsera 89', 'Descripción para pulsera 89', 12.00, 40, 'product_images/pulseras/89.jpg', 'Brand Y', 3, NOW(), NOW(), null);
+
+INSERT INTO myapp_product (id, name, description, price, available_units, image, brand, category_id, created_at, updated_at, size) VALUES
+(90, 'Reloj 90', 'Descripción para reloj 90', 35.00, 25, 'product_images/reloj/mujer/90.jpg', 'Brand Z', 4, NOW(), NOW(), null),
+(91, 'Reloj 91', 'Descripción para reloj 91', 35.00, 25, 'product_images/reloj/mujer/91.jpg', 'Brand Z', 4, NOW(), NOW(), null),
+(92, 'Reloj 92', 'Descripción para reloj 92', 35.00, 25, 'product_images/reloj/mujer/92.jpg', 'Brand Z', 4, NOW(), NOW(), null),
+(93, 'Reloj 93', 'Descripción para reloj 93', 35.00, 25, 'product_images/reloj/mujer/93.jpg', 'Brand Z', 4, NOW(), NOW(), null),
+(94, 'Reloj 94', 'Descripción para reloj 94', 35.00, 25, 'product_images/reloj/mujer/94.jpg', 'Brand Z', 4, NOW(), NOW(), null),
+(95, 'Reloj 95', 'Descripción para reloj 95', 35.00, 25, 'product_images/reloj/mujer/95.jpg', 'Brand Z', 4, NOW(), NOW(), null),
+(96, 'Reloj 96', 'Descripción para reloj 96', 35.00, 25, 'product_images/reloj/mujer/96.jpg', 'Brand Z', 4, NOW(), NOW(), null),
+(97, 'Reloj 97', 'Descripción para reloj 97', 35.00, 25, 'product_images/reloj/mujer/97.jpg', 'Brand Z', 4, NOW(), NOW(), null),
+(98, 'Reloj 98', 'Descripción para reloj 98', 35.00, 25, 'product_images/reloj/mujer/98.jpg', 'Brand Z', 4, NOW(), NOW(), null),
+(99, 'Reloj 99', 'Descripción para reloj 99', 35.00, 25, 'product_images/reloj/mujer/99.jpg', 'Brand Z', 4, NOW(), NOW(), null),
+(100, 'Reloj 100', 'Descripción para reloj 100', 35.00, 25, 'product_images/reloj/mujer/100.jpg', 'Brand Z', 4, NOW(), NOW(), null),
+(101, 'Reloj 101', 'Descripción para reloj 101', 35.00, 25, 'product_images/reloj/mujer/101.jpg', 'Brand Z', 4, NOW(), NOW(), null),
+(102, 'Reloj 102', 'Descripción para reloj 102', 35.00, 25, 'product_images/reloj/mujer/102.jpg', 'Brand Z', 4, NOW(), NOW(), null),
+(103, 'Reloj 103', 'Descripción para reloj 103', 35.00, 25, 'product_images/reloj/mujer/103.jpg', 'Brand Z', 4, NOW(), NOW(), null),
+(104, 'Reloj 104', 'Descripción para reloj 104', 35.00, 25, 'product_images/reloj/mujer/104.jpg', 'Brand Z', 4, NOW(), NOW(), null);
+
+INSERT INTO myapp_product (id, name, description, price, available_units, image, brand, category_id, created_at, updated_at, color, size) VALUES
+(110, 'Bolso 110', 'Descripción para bolso 110', 45.00, 30, 'product_images/bolsos/110.jpg', 'Brand Y', 6, NOW(), NOW(), 'blanco', null),
+(111, 'Bolso 111', 'Descripción para bolso 111', 50.00, 25, 'product_images/bolsos/111.jpg', 'Brand Y', 6, NOW(), NOW(), 'rosa', null),
+(112, 'Bolso 112', 'Descripción para bolso 112', 48.00, 20, 'product_images/bolsos/112.jpg', 'Brand Y', 6, NOW(), NOW(), 'marrón', null),
+(113, 'Bolso 113', 'Descripción para bolso 113', 47.00, 35, 'product_images/bolsos/113.jpg', 'Brand Y', 6, NOW(), NOW(), 'lila', null),
+(114, 'Bolso 114', 'Descripción para bolso 114', 55.00, 15, 'product_images/bolsos/114.jpg', 'Brand Y', 6, NOW(), NOW(), 'amarillo', null),
+(115, 'Bolso 115', 'Descripción para bolso 115', 53.00, 20, 'product_images/bolsos/115.jpg', 'Brand Y', 6, NOW(), NOW(), 'gris', null),
+(116, 'Bolso 116', 'Descripción para bolso 116', 42.00, 40, 'product_images/bolsos/116.jpg', 'Brand Y', 6, NOW(), NOW(), 'amarillo', null),
+(117, 'Bolso 117', 'Descripción para bolso 117', 46.00, 50, 'product_images/bolsos/117.jpg', 'Brand Y', 6, NOW(), NOW(), 'marrón', null),
+(118, 'Bolso 118', 'Descripción para bolso 118', 51.00, 25, 'product_images/bolsos/118.jpg', 'Brand Y', 6, NOW(), NOW(), 'gris', null),
+(119, 'Bolso 119', 'Descripción para bolso 119', 49.00, 30, 'product_images/bolsos/119.jpg', 'Brand Y', 6, NOW(), NOW(), 'amarillo', null),
+(120, 'Bolso 120', 'Descripción para bolso 120', 50.00, 20, 'product_images/bolsos/120.jpg', 'Brand Y', 6, NOW(), NOW(), 'amarillo', null),
+(121, 'Bolso 121', 'Descripción para bolso 121', 44.00, 40, 'product_images/bolsos/121.jpg', 'Brand Y', 6, NOW(), NOW(), 'beige', null),
+(122, 'Bolso 122', 'Descripción para bolso 122', 43.00, 35, 'product_images/bolsos/122.jpg', 'Brand Y', 6, NOW(), NOW(), 'amarillo', null),
+(123, 'Bolso 123', 'Descripción para bolso 123', 56.00, 15, 'product_images/bolsos/123.jpg', 'Brand Y', 6, NOW(), NOW(), 'beige', null),
+(124, 'Bolso 124', 'Descripción para bolso 124', 45.00, 25, 'product_images/bolsos/124.jpg', 'Brand Y', 6, NOW(), NOW(), 'gris', null),
+(125, 'Bolso 125', 'Descripción para bolso 125', 47.00, 20, 'product_images/bolsos/125.jpg', 'Brand Y', 6, NOW(), NOW(), 'rojo', null),
+(126, 'Bolso 126', 'Descripción para bolso 126', 52.00, 30, 'product_images/bolsos/126.jpg', 'Brand Y', 6, NOW(), NOW(), 'amarillo', null),
+(127, 'Bolso 127', 'Descripción para bolso 127', 48.00, 25, 'product_images/bolsos/127.jpg', 'Brand Y', 6, NOW(), NOW(), 'lila', null),
+(128, 'Bolso 128', 'Descripción para bolso 128', 46.00, 40, 'product_images/bolsos/128.jpg', 'Brand Y', 6, NOW(), NOW(), 'lila', null),
+(129, 'Bolso 129', 'Descripción para bolso 129', 53.00, 20, 'product_images/bolsos/129.jpg', 'Brand Y', 6, NOW(), NOW(), 'marrón', null),
+(130, 'Bolso 130', 'Descripción para bolso 130', 50.00, 15, 'product_images/bolsos/130.jpg', 'Brand Y', 6, NOW(), NOW(), 'negro', null),
+(131, 'Bolso 131', 'Descripción para bolso 131', 51.00, 15, 'product_images/bolsos/131.jpg', 'Brand Y', 6, NOW(), NOW(), 'negro', null),
+(132, 'Bolso 132', 'Descripción para bolso 132', 45.00, 30, 'product_images/bolsos/132.jpg', 'Brand Y', 6, NOW(), NOW(), 'amarillo', null),
+(133, 'Bolso 133', 'Descripción para bolso 133', 47.00, 25, 'product_images/bolsos/133.jpg', 'Brand Y', 6, NOW(), NOW(), 'amarillo', null),
+(134, 'Bolso 134', 'Descripción para bolso 134', 43.00, 30, 'product_images/bolsos/134.jpg', 'Brand Y', 6, NOW(), NOW(), 'lila', null),
+(135, 'Bolso 135', 'Descripción para bolso 135', 49.00, 20, 'product_images/bolsos/135.jpg', 'Brand Y', 6, NOW(), NOW(), 'azul', null),
+(136, 'Bolso 136', 'Descripción para bolso 136', 52.00, 30, 'product_images/bolsos/136.jpg', 'Brand Y', 6, NOW(), NOW(), 'negro', null),
+(137, 'Bolso 137', 'Descripción para bolso 137', 48.00, 25, 'product_images/bolsos/137.jpg', 'Brand Y', 6, NOW(), NOW(), 'lila', null),
+(138, 'Bolso 138', 'Descripción para bolso 138', 46.00, 30, 'product_images/bolsos/138.jpg', 'Brand Y', 6, NOW(), NOW(), 'azul', null),
+(139, 'Bolso 139', 'Descripción para bolso 139', 53.00, 20, 'product_images/bolsos/139.jpg', 'Brand Y', 6, NOW(), NOW(), 'amarillo', null),
+(140, 'Bolso 140', 'Descripción para bolso 140', 50.00, 25, 'product_images/bolsos/140.jpg', 'Brand Y', 6, NOW(), NOW(), 'rojo', null),
+(141, 'Bolso 141', 'Descripción para bolso 141', 49.00, 20, 'product_images/bolsos/141.jpg', 'Brand Y', 6, NOW(), NOW(), 'lila', null),
+(142, 'Bolso 142', 'Descripción para bolso 142', 44.00, 30, 'product_images/bolsos/142.jpg', 'Brand Y', 6, NOW(), NOW(), 'blanco', null),
+(143, 'Bolso 143', 'Descripción para bolso 143', 47.00, 25, 'product_images/bolsos/143.jpg', 'Brand Y', 6, NOW(), NOW(), 'negro', null),
+(144, 'Bolso 144', 'Descripción para bolso 144', 45.00, 20, 'product_images/bolsos/144.jpg', 'Brand Y', 6, NOW(), NOW(), 'blanco', null),
+(145, 'Bolso 145', 'Descripción para bolso 145', 48.00, 30, 'product_images/bolsos/145.jpg', 'Brand Y', 6, NOW(), NOW(), 'azul', null),
+(146, 'Bolso 146', 'Descripción para bolso 146', 50.00, 25, 'product_images/bolsos/146.jpg', 'Brand Y', 6, NOW(), NOW(), 'blanco', null),
+(147, 'Bolso 147', 'Descripción para bolso 147', 51.00, 15, 'product_images/bolsos/147.jpg', 'Brand Y', 6, NOW(), NOW(), 'blanco', null),
+(148, 'Bolso 148', 'Descripción para bolso 148', 52.00, 30, 'product_images/bolsos/148.jpg', 'Brand Y', 6, NOW(), NOW(), 'amarillo', null),
+(149, 'Bolso 149', 'Descripción para bolso 149', 54.00, 20, 'product_images/bolsos/149.jpg', 'Brand Y', 6, NOW(), NOW(), 'amarillo', null),
+(150, 'Bolso 150', 'Descripción para bolso 150', 57.00, 10, 'product_images/bolsos/150.jpg', 'Brand Y', 6, NOW(), NOW(), 'azul', null);
+
+INSERT INTO myapp_product (id, name, description, price, available_units, image, brand, category_id, created_at, updated_at, color, size) VALUES
+(151, 'Cartera 151', 'Descripción para cartera 151', 30.00, 50, 'product_images/carteras/151.jpg', 'Brand Z', 7, NOW(), NOW(), 'marrón', null),
+(153, 'Cartera 153', 'Descripción para cartera 153', 30.00, 50, 'product_images/carteras/153.jpg', 'Brand Z', 7, NOW(), NOW(), 'marrón', null),
+(152, 'Cartera 152', 'Descripción para cartera 152', 30.00, 50, 'product_images/carteras/152.jpg', 'Brand Z', 7, NOW(), NOW(), 'fucsia', null),
+(193, 'Cartera 193', 'Descripción para cartera 193', 30.00, 50, 'product_images/carteras/193.jpg', 'Brand Z', 7, NOW(), NOW(), 'fucsia', null),
+(196, 'Cartera 196', 'Descripción para cartera 196', 30.00, 50, 'product_images/carteras/196.jpg', 'Brand Z', 7, NOW(), NOW(), 'fucsia', null),
+(155, 'Cartera 155', 'Descripción para cartera 155', 30.00, 50, 'product_images/carteras/155.jpg', 'Brand Z', 7, NOW(), NOW(), 'blanco', null),
+(157, 'Cartera 157', 'Descripción para cartera 157', 30.00, 50, 'product_images/carteras/157.jpg', 'Brand Z', 7, NOW(), NOW(), 'blanco', null),
+(161, 'Cartera 161', 'Descripción para cartera 161', 30.00, 50, 'product_images/carteras/161.jpg', 'Brand Z', 7, NOW(), NOW(), 'blanco', null),
+(197, 'Cartera 197', 'Descripción para cartera 197', 30.00, 50, 'product_images/carteras/197.jpg', 'Brand Z', 7, NOW(), NOW(), 'blanco', null),
+(159, 'Cartera 159', 'Descripción para cartera 159', 30.00, 50, 'product_images/carteras/159.jpg', 'Brand Z', 7, NOW(), NOW(), 'lila', null),
+(158, 'Cartera 158', 'Descripción para cartera 158', 30.00, 50, 'product_images/carteras/158.jpg', 'Brand Z', 7, NOW(), NOW(), 'rojo', null),
+(156, 'Cartera 156', 'Descripción para cartera 156', 30.00, 50, 'product_images/carteras/156.jpg', 'Brand Z', 7, NOW(), NOW(), 'negro', null),
+(160, 'Cartera 160', 'Descripción para cartera 160', 30.00, 50, 'product_images/carteras/160.jpg', 'Brand Z', 7, NOW(), NOW(), 'negro', null),
+(191, 'Cartera 191', 'Descripción para cartera 191', 30.00, 50, 'product_images/carteras/191.jpg', 'Brand Z', 7, NOW(), NOW(), 'negro', null),
+(162, 'Cartera 162', 'Descripción para cartera 162', 30.00, 50, 'product_images/carteras/162.jpg', 'Brand Z', 7, NOW(), NOW(), 'azul', null),
+(182, 'Cartera 182', 'Descripción para cartera 182', 30.00, 50, 'product_images/carteras/182.jpg', 'Brand Z', 7, NOW(), NOW(), 'azul', null),
+(179, 'Cartera 179', 'Descripción para cartera 179', 30.00, 50, 'product_images/carteras/179.jpg', 'Brand Z', 7, NOW(), NOW(), 'rosa', null),
+(181, 'Cartera 181', 'Descripción para cartera 181', 30.00, 50, 'product_images/carteras/181.jpg', 'Brand Z', 7, NOW(), NOW(), 'rosa', null),
+(190, 'Cartera 190', 'Descripción para cartera 190', 30.00, 50, 'product_images/carteras/190.jpg', 'Brand Z', 7, NOW(), NOW(), 'rosa', null),
+(192, 'Cartera 192', 'Descripción para cartera 192', 30.00, 50, 'product_images/carteras/192.jpg', 'Brand Z', 7, NOW(), NOW(), 'rosa', null),
+(194, 'Cartera 194', 'Descripción para cartera 194', 30.00, 50, 'product_images/carteras/194.jpg', 'Brand Z', 7, NOW(), NOW(), 'rosa', null),
+(195, 'Cartera 195', 'Descripción para cartera 195', 30.00, 50, 'product_images/carteras/195.jpg', 'Brand Z', 7, NOW(), NOW(), 'rosa', null),
+(180, 'Cartera 180', 'Descripción para cartera 180', 30.00, 50, 'product_images/carteras/180.jpg', 'Brand Z', 7, NOW(), NOW(), 'verde', null);
 
 -- Insert usuarios
 INSERT INTO myapp_user (id, last_login, email, password, first_name, last_name, is_active, is_user, created_at, updated_at)
