@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from myapp.views import qa_admin
-from myapp.chatbot_views import ask_question
+from myapp.qa_bot import ask_question
 
 
 urlpatterns = [
