@@ -16,12 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from myapp.views import qa_admin
+from myapp.views import qa_elegance
 from myapp.qa_bot import ask_question
 
 
 urlpatterns = [
-    path('qa_admin/', qa_admin, name='qa_admin'),
+    path('qa_elegance/', qa_elegance, name='qa_elegance'),
     path('ask_question/', ask_question, name='ask_question'),
 ]
 
