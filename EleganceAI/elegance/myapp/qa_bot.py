@@ -1,39 +1,12 @@
-# Standard Python Libraries
-import os
 import json
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
-# Import custom modules
-from .scraper import scrape_webpage
-from .text_splitter import split_text_into_chunks
-
-# LangChain and Google Generative AI Libraries
-import google.generativeai as genai
-from langchain.prompts import PromptTemplate
-from langchain.chains.question_answering import load_qa_chain
-from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain_community.vectorstores import FAISS
-
-# Configure Google Generative AI
-API_KEY = os.getenv('GOOGLE_API_KEY')
-genai.configure(api_key=API_KEY)
-
-API_HUGGING = os.getenv('HUGGING_FACE')
-embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
-
-template = """{question}"""
-prompt_template = PromptTemplate(
-    template=template,
-    input_variables=['question']
-)
-
-# Instantiate the Google Generative AI model
-llm = ChatGoogleGenerativeAI(
-    model="gemini-1.5-flash", google_api_key=API_KEY,
-    temperature=0
-)
+from .config import embeddings, llm  # Import configuration
+from .scraper import scrape_webpage  # Import the scraping logic
+from .text_splitter import split_text_into_chunks  # Import text splitter
+from .vector_db import initialize_faiss  # Import FAISS logic
+from .qa_chain import load_chain, parse_response  # Import QA chain logic
 
 # Define the URL
 url = 'https://lunamar.co/blogs/news/tendencias-en-accesorios-2024?srsltid=AfmBOoom1AHGRDfcJy2ZQeaePPqNpG87yGEwyw-cBNIFVfqyNF2G038k'
@@ -45,14 +18,10 @@ raw_text = scrape_webpage(url)
 texts = split_text_into_chunks(raw_text)
 
 # Create FAISS vector store
-docsearch = FAISS.from_texts(texts, embeddings)
+docsearch = initialize_faiss(texts, embeddings)
 
 # Load QA chain with model
-chain = load_qa_chain(llm, chain_type="stuff")
-
-# Function to format the output
-def parse_response(response):
-    return response.strip()
+chain = load_chain(llm)
 
 @csrf_exempt
 def ask_question(request):
