@@ -12,9 +12,9 @@ from myapp.views import (
     product_detail, get_products, get_comments_by_product, get_all_comments,
     post_category, get_category, put_category, delete_category, post_product, put_product, delete_product, 
     get_all_products, get_user, delete_user, register_user, login, protected, logout, get_users, get_product,
-    get_all_categories, qa_admin
+    get_all_categories
 )
-from myapp.chatbot_views import ask_question
+from myapp.chatbot.qa_bot import ask_question
 
 
 # Define the API schema
@@ -43,7 +43,6 @@ urlpatterns = [
     path('search-result/', search_result, name='search_result'),
     path('signin/', signin, name='signin'),
     path('store/', store, name='store'),
-    path('qa_admin/', qa_admin, name='qa_admin'),
   
 
     # API routes

@@ -318,6 +318,22 @@ article:after,
   transition: 0.5s;
 }
 
+.intro-banner-wrap {
+  width: 100%;
+  margin: 0; /* Elimina márgenes */
+  padding: 0; /* Elimina padding */
+}
+
+.intro-banner-wrap img {
+  width: 100%; /* Imagen ocupa todo el ancho */
+  border-radius: 0; /* Elimina bordes redondeados si no los necesitas */
+}
+
+.container_banner {
+  max-width: 100%; /* Permite que el contenedor ocupe todo el ancho */
+  padding: 0; /* Elimina cualquier padding */
+}
+
 .bg-pattern {
   background-image: url(../images/banners/bg-pattern.svg), linear-gradient(135deg, #b38c6d, #545454);
   background-size: cover, auto;
@@ -417,29 +433,36 @@ p:last-child {
 /* ================== header main ==================  */
 .header-top-light .nav-link {
   color: #969696;
+  
 }
 .header-top-light .nav-link:hover {
   color: #212529;
+  
 }
 
 .header-main {
+  position: fixed;
   position: relative;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  background-color: #f8f7f5;
 }
 
 .brand-wrap .logo, .navbar-brand .logo {
   margin-right: 7px;
   max-height: 42px;
   display: inline-block;
+
 }
 
 .navbar-main .nav-link {
   font-weight: 500;
   color: #1c1c1c;
+  
 }
 .navbar-main .nav-link:hover {
   color: #666;
+    
 }
 
 .widget-header {
@@ -556,7 +579,7 @@ p:last-child {
 }
 
 .btn-facebook {
-  background-color: #405D9D;
+  background-color:#C7B5A2;
   color: #fff;
 }
 .btn-facebook:hover {
@@ -580,7 +603,7 @@ p:last-child {
 }
 
 .btn-twitter {
-  background-color: #d9ccb4
+  background-color: #d9ccb4;
   color: #fff;
 }
 .btn-twitter:hover {

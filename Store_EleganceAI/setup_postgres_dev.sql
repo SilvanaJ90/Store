@@ -204,7 +204,7 @@ INSERT INTO myapp_product (id, name, description, price, available_units, image,
 -- Insert usuarios
 INSERT INTO myapp_user (id, last_login, email, password, first_name, last_name, is_active, is_user, created_at, updated_at)
 VALUES 
-(1, NOW(), 'usuario10@example.com', 'password10', 'Paula', 'Ramírez', TRUE, TRUE, NOW(), NOW()),
+(1, NOW(), 'usuario10@example.com', 'usuario10@example.com', 'Paula', 'Ramírez', TRUE, TRUE, NOW(), NOW()),
 (2, NOW(), 'usuario2@example.com', 'password2', 'María', 'Gómez', TRUE, TRUE, NOW(), NOW()),
 (3, NOW(), 'usuario3@example.com', 'password3', 'Carlos', 'López', TRUE, TRUE, NOW(), NOW()),
 (4, NOW(), 'usuario4@example.com', 'password4', 'Ana', 'Martínez', TRUE, TRUE, NOW(), NOW()),

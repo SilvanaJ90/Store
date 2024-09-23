@@ -5,10 +5,11 @@
 {% block content %}
 	<!-- ========================= SECTION MAIN ========================= -->
 	<section class="section-intro padding-y-sm">
-	<div class="container">
+	<div class="container_banner">
 
 	<div class="intro-banner-wrap">
-		<img src="{% static 'images/banners/1.jpg' %}" class="img-fluid rounded">
+		<img src="{% static 'images/banners/banner_elegaceai.png' %}" class="img-fluid rounded">
+		<!-- Botón para abrir el modal del chat -->
 	</div>
 
 	</div> <!-- container //  -->
@@ -37,7 +38,7 @@
 						<a href="{% url 'product-detail' product.id %}" class="title">{{ product.name }}</a>
 						<p class="product-description">{{ product.description }}</p>
 						<div class="price mt-1">${{ product.price }}</div>
-						<a href="#" class="btn btn-block btn-primary">Add to cart</a>
+						<a href="#" class="btn btn-block btn-primary">Agregar al carrito</a>
 					</figcaption>
 				</div>
 				
@@ -45,7 +46,100 @@
 		{% endfor %}
 	</div>
 
+	<!-- Contenedor para el ícono de chat -->
+	<div id="chat-icon" style="position: fixed; bottom: 90px; right: 50px; z-index: 1000; text-align: center;">
+		<i class="fas fa-comments fa-2x text-primary" data-bs-toggle="modal" data-bs-target="#chatModal" style="cursor: pointer;"></i>
+		<span style="display: block; background-color: #fff; color: #000; border-radius: 5px; padding: 5px; font-size: 12px; margin-top: 5px;">
+			¡Pregunta por los accesorios en tendencia!
+		</span>
+	</div>
 
+
+	<!-- Modal para el chat -->
+	<div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="chatModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" style="position: fixed; bottom: 0; right: 30px; margin: 0; max-width: 450px; height: 70%;">
+			<div class="modal-content" style="height: 60%;">
+				<div class="modal-header">
+					<!-- Ícono de asistente virtual en lugar del título -->
+				<p>Elegance</p>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+				</div>
+				<div class="modal-body d-flex flex-column" style="height: 70%;">
+					<!-- Mensaje de introducción -->
+					<div class="intro-message mb-3">
+						<p>Hola, bienvenido al chat de <strong>Elegance</strong>. Escribe tu pregunta para tener el gusto de asesorarte acerca de tendencias, darte recomendaciones y mucho más. Este es chat es atendido por una inteligencia artificial.</p>
+						<p>Consulta nuestra <a href="/politica-de-seguridad" target="_blank" style="color: blue; text-decoration: underline;">política de seguridad y privacidad de datos</a> para más información.</p>
+					</div>
+
+					<!-- Caja de chat -->
+					<div id="chat-box" class="chat-box flex-grow-1" style="overflow-y: auto; max-height: 300px; border: 1px solid #ddd; padding: 10px; margin-bottom: 15px;">
+						<!-- Aquí se mostrarán los mensajes del chat -->
+					</div>
+
+					<!-- Campo de entrada de texto con ícono de envío -->
+					<div class="input-group mt-auto">
+						<input type="text" id="question" class="form-control" placeholder="Escribe tu pregunta..." onkeydown="checkEnter(event)">
+						<span class="input-group-text" style="cursor: pointer;" onclick="askQuestion()">
+							<i class="fas fa-paper-plane"></i>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		// Función para detectar la tecla "Enter" y enviar la pregunta
+		function checkEnter(event) {
+			if (event.key === "Enter") {
+				askQuestion();
+			}
+		}
+
+		// Función para manejar el envío de la pregunta
+		function askQuestion() {
+			var question = document.getElementById("question").value;
+			if (question.trim() !== "") {
+				// Aquí puedes procesar la pregunta o agregarla a la caja de chat
+				document.getElementById("chat-box").innerHTML += `<div>${question}</div>`;
+				document.getElementById("question").value = "";  // Limpiar el campo de texto
+			}
+		}
+	</script>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        async function askQuestion() {
+            const question = document.getElementById('question').value;
+            if (question.trim() === '') return;
+
+            // Mostrar la pregunta en el área de chat
+            document.getElementById('chat-box').innerHTML += `<p><strong><i class="fa fa-user fa-lg"></i></strong> ${question}</p>`;
+
+            // Realizar la solicitud al backend de Django para obtener la respuesta
+            const response = await fetch('{% url "ask_question" %}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': '{{ csrf_token }}',  // Añadir CSRF token si es necesario
+                },
+                body: JSON.stringify({ question: question })
+            });
+
+            // Procesar la respuesta
+            const data = await response.json();
+            const answer = data.answer || 'Lo siento, no pude encontrar la respuesta.';
+
+            // Mostrar la respuesta en el área de chat
+            document.getElementById('chat-box').innerHTML += `<p><strong>Elegance</strong> ${answer}</p>`;
+
+            // Limpiar el campo de entrada
+            document.getElementById('question').value = '';
+        }
+    </script>
 
 	</div><!-- container // -->
 	</section>
