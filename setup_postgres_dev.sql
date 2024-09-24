@@ -95,6 +95,13 @@ INSERT INTO myapp_product (id, name, description, price, available_units, image,
 (68, 'Billetera 68', 'Descripción para billetera 68', 15.00, 55, 'product_images/billeteras/mujer/68.jpg', 'Brand X', 6, NOW(), NOW(), 'amarillo', null);
 
 INSERT INTO myapp_product (id, name, description, price, available_units, image, brand, category_id, created_at, updated_at, size) VALUES
+(302, 'Pulsera 302', 'Descripción para pulsera 302', 12.00, 40, 'product_images/pulseras/302.jpg', 'Brand Y', 3, NOW(), NOW(), null),
+(303, 'Pulsera 303', 'Descripción para pulsera 303', 12.00, 40, 'product_images/pulseras/303.jpg', 'Brand Y', 3, NOW(), NOW(), null),
+(304, 'Pulsera 304', 'Descripción para pulsera 304', 12.00, 40, 'product_images/pulseras/304.jpg', 'Brand Y', 3, NOW(), NOW(), null),
+(305, 'Pulsera 305', 'Descripción para pulsera 305', 12.00, 40, 'product_images/pulseras/305.jpg', 'Brand Y', 3, NOW(), NOW(), null),
+(306, 'Pulsera 306', 'Descripción para pulsera 306', 12.00, 40, 'product_images/pulseras/306.jpg', 'Brand Y', 3, NOW(), NOW(), null);
+
+
 (70, 'Pulsera 70', 'Descripción para pulsera 70', 12.00, 40, 'product_images/pulseras/70.jpg', 'Brand Y', 3, NOW(), NOW(), null),
 (71, 'Pulsera 71', 'Descripción para pulsera 71', 12.00, 40, 'product_images/pulseras/71.jpg', 'Brand Y', 3, NOW(), NOW(), null),
 (72, 'Pulsera 72', 'Descripción para pulsera 72', 12.00, 40, 'product_images/pulseras/72.jpg', 'Brand Y', 3, NOW(), NOW(), null),
@@ -114,7 +121,10 @@ INSERT INTO myapp_product (id, name, description, price, available_units, image,
 (86, 'Pulsera 86', 'Descripción para pulsera 86', 12.00, 40, 'product_images/pulseras/86.jpg', 'Brand Y', 3, NOW(), NOW(), null),
 (87, 'Pulsera 87', 'Descripción para pulsera 87', 12.00, 40, 'product_images/pulseras/87.jpg', 'Brand Y', 3, NOW(), NOW(), null),
 (88, 'Pulsera 88', 'Descripción para pulsera 88', 12.00, 40, 'product_images/pulseras/88.jpg', 'Brand Y', 3, NOW(), NOW(), null),
-(89, 'Pulsera 89', 'Descripción para pulsera 89', 12.00, 40, 'product_images/pulseras/89.jpg', 'Brand Y', 3, NOW(), NOW(), null);
+(89, 'Pulsera 89', 'Descripción para pulsera 89', 12.00, 40, 'product_images/pulseras/89.jpg', 'Brand Y', 3, NOW(), NOW(), null),
+(300, 'Pulsera 300', 'Descripción para pulsera 300', 12.00, 40, 'product_images/pulseras/300.jpg', 'Brand Y', 3, NOW(), NOW(), null),
+(301, 'Pulsera 301', 'Descripción para pulsera 301', 12.00, 40, 'product_images/pulseras/301.jpg', 'Brand Y', 3, NOW(), NOW(), null),
+
 
 INSERT INTO myapp_product (id, name, description, price, available_units, image, brand, category_id, created_at, updated_at, size) VALUES
 (90, 'Reloj 90', 'Descripción para reloj 90', 35.00, 25, 'product_images/reloj/mujer/90.jpg', 'Brand Z', 4, NOW(), NOW(), null),

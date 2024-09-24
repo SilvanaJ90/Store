@@ -131,11 +131,12 @@
 			{% for product in page_obj %}
 			<div class="col-md-4">
 				<figure class="card card-product-grid">
-					<div class="img-wrap">
-						<img src="{{ product.image.url }}" alt="{{ product.name }}"> 
-		
-					</div> <!-- img-wrap.// -->
+					<!-- Enlace que envuelve la imagen para acceso directo a product-detail -->
+					<a href="{% url 'product-detail' product.id %}" class="img-wrap">
+						<img src="{{ product.image.url }}" alt="{{ product.name }}">
+					</a> <!-- img-wrap.// -->
 					<figcaption class="info-wrap">
+						
 						<div class="fix-height">
 							<a href="{% url 'product-detail' product.id %}" class="title">{{ product.name }}</a>
 							<div class="price-wrap mt-2">
