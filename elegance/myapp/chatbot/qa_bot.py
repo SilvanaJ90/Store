@@ -1,18 +1,13 @@
 import json
-
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-
-from myapp.chatbot.config import embeddings
-from myapp.chatbot.vector_db import initialize_faiss, texts
-from myapp.chatbot.memory import memory, chat_llm_chain
-
-# initialize faiss vectordb
-docsearch = initialize_faiss(texts, embeddings)
+from myapp.chatbot.memory import memory
+from myapp.chatbot.chain import generate_response_from_llm, docsearch
 
 
+# Function to format the response
 def parse_response(response):
-    """ parse the responses """
+    """Parsea la respuesta generada."""
     response_lines = response.split("\n")
     formatted_response = ""
 
@@ -26,7 +21,7 @@ def parse_response(response):
 @csrf_exempt
 def ask_question(request):
     """
-    Questions and Answers
+    Endpoint para preguntas y respuestas (QA)
     """
     if request.method == 'POST':
         try:
@@ -36,10 +31,10 @@ def ask_question(request):
 
             if not question:
                 return JsonResponse(
-                    {'answer': 'Por favor,proporciona una pregunta.'},
+                    {'answer': 'Por favor, proporciona una pregunta.'},
                     status=400)
 
-            # Search relevant documents in FAISS based on the question
+            # Retrieving relevant documents with FAISS
             docs = docsearch.similarity_search(question)
 
             if not docs:
@@ -47,19 +42,23 @@ def ask_question(request):
                     {'answer': 'No se encontraron documentos relevantes.'},
                     status=404)
 
-            # Get context from conversation history
+            # Load conversation history from memory
             context = memory.load_memory_variables({})["chat_history"]
 
-            # Run the LLM chain to get the response
-            result = chat_llm_chain.run(
-                {"human_input": question, "chat_history": context})
+            # Generate the final response using the custom LLM
+            llm_response = generate_response_from_llm(question, context, docs)
 
-            # Process the model response
-            parsed_response = parse_response(result)
+            # Parse and format the LLM response
+            parsed_response = parse_response(llm_response)
+
+            # Save updated history to memory
+            memory.save_context(
+                {"human_input": question}, {"AI_response": parsed_response})
 
             # Return the processed response
             return JsonResponse({'answer': parsed_response})
 
         except Exception as e:
-            # Error 500
-            return JsonResponse({'error': str(e)}, status=500)
+            # Error handling
+            return JsonResponse(
+                {'error': f"Ha ocurrido un error: {str(e)}"}, status=500)

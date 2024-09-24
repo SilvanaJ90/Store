@@ -24,11 +24,14 @@ def text_splitter(
         Returns:
         - texts (list): List of split text chunks.
     """
+    # Verificar si los documentos tienen el atributo 'page_content'
+    if not all(hasattr(doc, 'page_content') for doc in documents):
+        raise AttributeError("Al menos uno de los documentos no tiene el atributo 'page_content'.")
 
     # Extraer el texto completo de cada documento
     full_text = "\n\n".join([doc.page_content for doc in documents])
 
-    # Crear un objeto text_splitter
+    # Crear un objeto text_splitter con los parámetros proporcionados
     text_splitter = CharacterTextSplitter(
         separator=separator,
         chunk_size=chunk_size,
@@ -37,7 +40,7 @@ def text_splitter(
         is_separator_regex=is_separator_regex,
     )
 
-    # Crear documentos a partir del texto extraído
-    texts = text_splitter.create_documents([full_text])
+    # Dividir el texto en fragmentos
+    texts = text_splitter.split_text(full_text)
 
     return texts
