@@ -1,4 +1,8 @@
-# Retrieval Augmented Generation (RAG)
+# EleganceAI - Retrieve, Augment, Generate System
+
+EleganceAI is an advanced RAG (Retrieve, Augment, Generate) system built on state-of-the-art Natural Language Processing (NLP) and Large Language Models (LLMs).
+This project aims to revolutionize customer interaction by providing automated and personalized services, such as answering frequently asked questions, offering 
+expert product advice, and assisting with tasks like quotes, shipping, and payments.
 
 ## Table of Contents
 
@@ -11,11 +15,29 @@
 - [Authors](https://github.com/SilvanaJ90/ML-Portfolio?tab=readme-ov-file#authors)
 
 ### General project requirements
+EleganceAI is built on a robust RAG system, leveraging key technologies:
+
+LLM (Large Language Models) to provide consistent, automated responses to customer inquiries.
+NLP (Natural Language Processing) to understand customer context and generate personalized recommendations.
+Database and API integration to manage backend tasks like quotes, payments, and shipment tracking.
+
 ### General functionalities
+
+The development of EleganceAI is structured into several key stages, each focusing on different aspects of the project:
+
+Backend Development
+    Creation and connection of databases.
+    Development of APIs, ensuring smooth integration with the e-commerce platform.
+
+RAG System Development
+    Applying machine learning techniques to analyze customer preferences.
+    Predicting products of interest, focusing on web integration to display real-time, dynamic recommendations.
 
 ### RAG System with LangChain Framework
 
 ![This is an image](https://github.com/SilvanaJ90/ML-Portfolio/blob/main/img/rag.png)
+
+RAG System Architecture
 
 | Components     | File | Description |
 | -------------- | ------- | ----------- |
@@ -26,6 +48,9 @@
 |Agent|[qa_bot.py](https://github.com/SilvanaJ90/ML-Portfolio/blob/main/elegance/myapp/chatbot/qa_bot.py) | Uses data connectors, data models, chains, memory, and provides a response to the user |
 
 ### Chatbot - EleganceAI
+
+EleganceAI offers a chatbot that provides a personalized experience for Accesorios Elegance customers,
+advising users on product choices and assisting with tasks like quotes and payments.
 
 https://github.com/user-attachments/assets/ecd1033d-d9c2-4c7b-87b4-0359d30bfda1
 
