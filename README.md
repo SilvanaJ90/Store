@@ -17,19 +17,19 @@ expert product advice, and assisting with tasks like quotes, shipping, and payme
 ### General project requirements
 EleganceAI is built on a robust RAG system, leveraging key technologies:
 
-LLM (Large Language Models) to provide consistent, automated responses to customer inquiries.
-NLP (Natural Language Processing) to understand customer context and generate personalized recommendations.
-Database and API integration to manage backend tasks like quotes, payments, and shipment tracking.
+- LLM (Large Language Models) to provide consistent, automated responses to customer inquiries.
+- NLP (Natural Language Processing) to understand customer context and generate personalized recommendations.
+- Database and API integration to manage backend tasks like quotes, payments, and shipment tracking.
 
 ### General functionalities
 
 The development of EleganceAI is structured into several key stages, each focusing on different aspects of the project:
 
-Backend Development
+- Backend Development
     Creation and connection of databases.
     Development of APIs, ensuring smooth integration with the e-commerce platform.
 
-RAG System Development
+- RAG System Development
     Applying machine learning techniques to analyze customer preferences.
     Predicting products of interest, focusing on web integration to display real-time, dynamic recommendations.
 
