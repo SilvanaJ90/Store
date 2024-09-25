@@ -6,7 +6,7 @@
 
 | files                                                                                                                           | xxxx                                                                                                               |
 | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| 💻 [config.py](https://github.com/SilvanaJ90/ML-Portfolio/blob/main/elegance/myapp/chatbot/data_preprocessing.py)|  | 
+| 💻 [config.py](https://github.com/SilvanaJ90/ML-Portfolio/blob/main/elegance/myapp/chatbot/config.py)|  | 
 | ❓ [qa_bot.py](https://github.com/SilvanaJ90/ML-Portfolio/blob/main/elegance/myapp/chatbot/qa_bot.py) |   |
 | 📉 [vector_db.py](https://github.com/SilvanaJ90/ML-Portfolio/blob/main/elegance/myapp/chatbot/vector_db.py)| |
 | 🖍 [prompt_template.py](https://github.com/SilvanaJ90/ML-Portfolio/blob/main/elegance/myapp/chatbot/prompt_template.py) | |
