@@ -5,7 +5,7 @@ from myapp.chatbot.chain import generate_response_from_llm, docsearch
 
 
 def parse_response(response):
-    """Parsea la respuesta generada."""
+    """Parse the generated response."""
     response_lines = response.split("\n")
     formatted_response = ""
 
@@ -18,7 +18,7 @@ def parse_response(response):
 
 def ask_question(request):
     """
-    Endpoint para preguntas y respuestas (QA)
+    QA Endpoint
     """
     if request.method == 'POST':
         try:
