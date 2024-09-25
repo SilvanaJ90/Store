@@ -6,7 +6,7 @@
 - [General functionalities](https://github.com/SilvanaJ90/ML-Portfolio?tab=readme-ov-file#general-functionalities)
 - [RAG System with LangChain Frameworks](https://github.com/SilvanaJ90/ML-Portfolio?tab=readme-ov-file#rag-system-with-langchain-framework)
 - [Chatbot - EleganceAI](https://github.com/SilvanaJ90/ML-Portfolio?tab=readme-ov-file#chatbot---eleganceai)
-- [How to Start It](https://github.com/SilvanaJ90/bh_profile#how-to-start-it)
+- [How to Start It](https://github.com/SilvanaJ90/ML-Portfolio?tab=readme-ov-file#how-to-start-it)
 - [Languages and Tools](https://github.com/SilvanaJ90/ML-Portfolio?tab=readme-ov-file#languages-and-tools)
 - [Authors](https://github.com/SilvanaJ90/ML-Portfolio?tab=readme-ov-file#authors)
 
@@ -27,12 +27,20 @@
 
 ### Chatbot - EleganceAI
 
-
 https://github.com/user-attachments/assets/ecd1033d-d9c2-4c7b-87b4-0359d30bfda1
 
 ### How to Start It
 
-
+- Clone the project
+```git clone   https://github.com/SilvanaJ90/ML-Portfolio.git ```
+- Create a Google AI API key and save it in a .env file
+```GOOGLE_API_KEY=your_api_key ```
+- Install the required dependencies using the following command
+``` pip install -r requirements.txt ```
+- Navigate to the repository and then to the project
+```cd elegance```
+ - While inside the elegance project directory, run the server
+  ```python3 manage.py runserver ```
 
 
 
