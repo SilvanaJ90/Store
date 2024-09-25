@@ -1,8 +1,8 @@
-# RAG systems
+# Retrieval Augmented Generation (RAG)
 
 
 
-![This is an image](https://github.com/SilvanaJ90/ML-Portfolio/img/rag.png)
+![This is an image](https://github.com/SilvanaJ90/ML-Portfolio/blob/main/img/rag.png)
 
 | files                                                                                                                           | xxxx                                                                                                               |
 | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
@@ -34,6 +34,7 @@
 
 <h3 align="left">ML/AI:</h3>
  <p align="left"><a href="https://www.langchain.com/" target="_blank" rel="noreferrer"> <img src="https://img.shields.io/badge/langchain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white"/> </a>
-  <a href="https://gemini.google.com" target="_blank" rel="noreferrer"> <img src="https://img.shields.io/badge/Google%20Gemini-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white"/> </a></p>
+  <a href="https://gemini.google.com" target="_blank" rel="noreferrer"> <img src="https://img.shields.io/badge/Google%20Gemini-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white"/> </a>
+ <a href="https://huggingface.co/" target="_blank" rel="noreferrer"> <img src="https://img.shields.io/badge/-HuggingFace-FDEE21?style=for-the-badge&logo=HuggingFace&logoColor=black"/> </a></p>
 
 
