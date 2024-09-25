@@ -6,13 +6,13 @@ from langchain_core.prompts import (
     MessagesPlaceholder,
 )
 
-from myapp.chatbot.prompt_template import prompt_template
+from myapp.chatbot.prompt_template import Prompt_template
 
 
 prompt = ChatPromptTemplate.from_messages(
     [
         SystemMessage(
-            content=prompt_template
+            content=Prompt_template
         ),  # The persistent system prompt
         MessagesPlaceholder(
             variable_name="chat_history"

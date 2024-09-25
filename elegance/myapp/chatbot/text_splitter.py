@@ -26,7 +26,7 @@ def text_splitter(
     """
     # Verificar si los documentos tienen el atributo 'page_content'
     if not all(hasattr(doc, 'page_content') for doc in documents):
-        raise AttributeError("Al menos uno de los documentos no tiene el atributo 'page_content'.")
+        raise AttributeError(" no tiene el atributo 'page_content'.")
 
     # Extraer el texto completo de cada documento
     full_text = "\n\n".join([doc.page_content for doc in documents])

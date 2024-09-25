@@ -1,9 +1,9 @@
 from langchain.chains import LLMChain
 from langchain.chains import RetrievalQA
 
-from myapp.chatbot.config import llm, embeddings
+from myapp.chatbot.llm import llm
 from myapp.chatbot.memory import prompt, memory
-from myapp.chatbot.vector_db import initialize_faiss, documents
+from myapp.chatbot.vector_db import initialize_faiss, documents, embeddings
 
 # initialize faiss vectordb
 docsearch = initialize_faiss(documents, embeddings)
