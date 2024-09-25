@@ -2,10 +2,10 @@
 
 ## Table of Contents
 
-- [General project requirements](https://github.com/SilvanaJ90/bh_profile#general-project-requirements)
-- [General functionalities](https://github.com/SilvanaJ90/bh_profile#general-functionalities)
+- [General project requirements](https://github.com/SilvanaJ90/ML-Portfolio?tab=readme-ov-file#general-project-requirements)
+- [General functionalities](https://github.com/SilvanaJ90/ML-Portfolio?tab=readme-ov-file#general-functionalities)
 - [RAG System with LangChain Frameworks](https://github.com/SilvanaJ90/ML-Portfolio?tab=readme-ov-file#rag-system-with-langchain-framework)
-- [Chatbot - EleganceAI](https://github.com/SilvanaJ90/bh_profile#user-roles)
+- [Chatbot - EleganceAI](https://github.com/SilvanaJ90/ML-Portfolio?tab=readme-ov-file#chatbot---eleganceai)
 - [How to Start It](https://github.com/SilvanaJ90/bh_profile#how-to-start-it)
 - [Languages and Tools](https://github.com/SilvanaJ90/ML-Portfolio?tab=readme-ov-file#languages-and-tools)
 - [Authors](https://github.com/SilvanaJ90/ML-Portfolio?tab=readme-ov-file#authors)
@@ -30,7 +30,7 @@
 
 https://github.com/user-attachments/assets/ecd1033d-d9c2-4c7b-87b4-0359d30bfda1
 
-How to Start It
+### How to Start It
 
 
 
