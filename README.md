@@ -7,11 +7,11 @@
 | files                                                                                                                           | xxxx                                                                                                               |
 | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | 💻 [config.py](https://github.com/SilvanaJ90/ML-Portfolio/blob/main/elegance/myapp/chatbot/config.py)|  | 
-| ❓ [qa_bot.py](https://github.com/SilvanaJ90/ML-Portfolio/blob/main/elegance/myapp/chatbot/qa_bot.py) |   |
-| 📉 [vector_db.py](https://github.com/SilvanaJ90/ML-Portfolio/blob/main/elegance/myapp/chatbot/vector_db.py)| |
 | 🖍 [prompt_template.py](https://github.com/SilvanaJ90/ML-Portfolio/blob/main/elegance/myapp/chatbot/prompt_template.py) | |
+| 📉 [vector_db.py](https://github.com/SilvanaJ90/ML-Portfolio/blob/main/elegance/myapp/chatbot/vector_db.py)| |
 | 🧠 [memory.py](https://github.com/SilvanaJ90/ML-Portfolio/blob/main/elegance/myapp/chatbot/memory.py)  |   |
 | 📎 [chain.py](https://github.com/SilvanaJ90/ML-Portfolio/blob/main/elegance/myapp/chatbot/chain.py) |  |
+| ❓ [qa_bot.py](https://github.com/SilvanaJ90/ML-Portfolio/blob/main/elegance/myapp/chatbot/qa_bot.py) |   |
 
 
 
