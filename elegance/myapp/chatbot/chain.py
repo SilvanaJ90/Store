@@ -27,7 +27,7 @@ qa_chain = RetrievalQA.from_chain_type(
 
 # Function to process the response of the custom LLM
 def generate_response_from_llm(question, context, documents):
-    """Usa el LLM personalizado para generar una respuesta."""
+    """Use the custom LLM to generate a response."""
     # Match the question and the content of the retrieved documents
     combined_input = f"Pregunta: {question}\n\nDocumentos:\n"
     for doc in documents:

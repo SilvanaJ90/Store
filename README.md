@@ -1,6 +1,20 @@
-# ML - Portfolio Project
+# RAG systems
 
-Here are the steps to run the store project:
+
+
+![This is an image](https://github.com/SilvanaJ90/ML-Portfolio/img/rag.png)
+
+| files                                                                                                                           | xxxx                                                                                                               |
+| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| 💻 [config.py](https://github.com/SilvanaJ90/ML-Portfolio/blob/main/elegance/myapp/chatbot/data_preprocessing.py)|  | 
+| ❓ [qa_bot.py](https://github.com/SilvanaJ90/ML-Portfolio/blob/main/elegance/myapp/chatbot/qa_bot.py) |   |
+| 📉 [vector_db.py](https://github.com/SilvanaJ90/ML-Portfolio/blob/main/elegance/myapp/chatbot/vector_db.py)| |
+| 🖍 [prompt_template.py](https://github.com/SilvanaJ90/ML-Portfolio/blob/main/elegance/myapp/chatbot/prompt_template.py) | |
+| 🧠 [memory.py](https://github.com/SilvanaJ90/ML-Portfolio/blob/main/elegance/myapp/chatbot/memory.py)  |   |
+| 📎 [chain.py](https://github.com/SilvanaJ90/ML-Portfolio/blob/main/elegance/myapp/chatbot/chain.py) |  |
+
+
+
 
 
 
@@ -18,7 +32,7 @@ Here are the steps to run the store project:
 <h3 align="left">Database:</h3>
 <p align="left"><a href="https://www.postgresql.org" target="_blank" rel="noreferrer"> <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white"/> </a>
 
-<h3 align="left">IA/ML:</h3>
+<h3 align="left">ML/AI:</h3>
  <p align="left"><a href="https://www.langchain.com/" target="_blank" rel="noreferrer"> <img src="https://img.shields.io/badge/langchain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white"/> </a>
   <a href="https://gemini.google.com" target="_blank" rel="noreferrer"> <img src="https://img.shields.io/badge/Google%20Gemini-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white"/> </a></p>
 

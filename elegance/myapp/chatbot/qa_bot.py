@@ -1,11 +1,9 @@
 import json
 from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
 from myapp.chatbot.memory import memory
 from myapp.chatbot.chain import generate_response_from_llm, docsearch
 
 
-# Function to format the response
 def parse_response(response):
     """Parsea la respuesta generada."""
     response_lines = response.split("\n")
@@ -18,7 +16,6 @@ def parse_response(response):
     return formatted_response
 
 
-@csrf_exempt
 def ask_question(request):
     """
     Endpoint para preguntas y respuestas (QA)

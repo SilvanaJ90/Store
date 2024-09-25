@@ -9,7 +9,7 @@ from myapp.chatbot.config import embeddings
 # documents = loader.load()
 
 # Load the texts
-loader = PyPDFLoader('myapp/chatbot/doc/raw_data/moda.pdf')
+loader = PyPDFLoader('myapp/chatbot/doc/raw_data/Documento-7.pdf')
 documents = loader.load()
 
 # Call the function and get the texts
