@@ -8,7 +8,7 @@
 ### RAG System with LangChain Framework
 | Components     | File | Description |
 | -------------- | ------- | ----------- |
-|Model I/O |[config.py](https://github.com/SilvanaJ90/ML-Portfolio/blob/main/elegance/myapp/chatbot/config.py)|The Model I/O focuses on basic inputs and outputs of the LLM, in this project the Google AI LLM  | 
+|Model I/O |[llm.py](https://github.com/SilvanaJ90/ML-Portfolio/blob/main/elegance/myapp/chatbot/llm.py)|The Model I/O focuses on basic inputs and outputs of the LLM, in this project the Google AI LLM  | 
 |Data connectors|[vector_db.py](https://github.com/SilvanaJ90/ML-Portfolio/blob/main/elegance/myapp/chatbot/vector_db.py)| Data connector focuses on connecting an LLM to a data source such as your own documents or a vector store|
 |Chains|[chain.py](https://github.com/SilvanaJ90/ML-Portfolio/blob/main/elegance/myapp/chatbot/chain.py) | Chains allow the output of one model to be linked as the input for another model call |
 |Memory|[memory.py](https://github.com/SilvanaJ90/ML-Portfolio/blob/main/elegance/myapp/chatbot/memory.py)  | Memory allows your models to retain the historical context of previous interactions |
