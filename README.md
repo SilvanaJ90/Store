@@ -28,9 +28,6 @@ https://github.com/user-attachments/assets/ecd1033d-d9c2-4c7b-87b4-0359d30bfda1
 <h3 align="left">Backend:</h3>
 <p align="left"> <a href="https://www.djangoproject.com/" target="_blank" rel="noreferrer"> <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue"/> </a> </p>
 
-<h3 align="left">Frontend:</h3>
- <p align="left"><a href="" target="_blank" rel="noreferrer"> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/> </a> <a href="" target="_blank" rel="noreferrer"> <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/> </a><a href="" target="_blank" rel="noreferrer"> <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white"/> </a>
- </a><a href="" target="_blank" rel="noreferrer"> <img src="https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white"/> </a><a href="" target="_blank" rel="noreferrer"> <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/> </a></p>
 
 
 
@@ -43,3 +40,8 @@ https://github.com/user-attachments/assets/ecd1033d-d9c2-4c7b-87b4-0359d30bfda1
  <a href="https://huggingface.co/" target="_blank" rel="noreferrer"> <img src="https://img.shields.io/badge/-HuggingFace-FDEE21?style=for-the-badge&logo=HuggingFace&logoColor=black"/> </a></p>
 
 
+## Authors
+Silvana Jaramillo - Machine Learning Engineer.
+<p><a href="https://linkedin.com/in/silvana-jaramillo" target="blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /> </a></p>
+Alejandro Caballero - Backend
+<p><a href="https://www.linkedin.com/in/alejandro-caballero-granado" target="blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /> </a></p>
