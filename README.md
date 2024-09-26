@@ -1,8 +1,6 @@
 # EleganceAI - Retrieve, Augment, Generate System
 
-EleganceAI is an advanced RAG (Retrieve, Augment, Generate) system built on state-of-the-art Natural Language Processing (NLP) and Large Language Models (LLMs).
-This project aims to revolutionize customer interaction by providing automated and personalized services, such as answering frequently asked questions, offering 
-expert product advice, and assisting with tasks like quotes, shipping, and payments.
+Elegance is a RAG system (Retrieve, Augment, Generate) built on Natural Language Processing (NLP) and Large Language Models (LLM). This project aims to interact with customers by answering frequently asked questions about accessory trends and helping customers find their suitable products
 
 ## Table of Contents
 
