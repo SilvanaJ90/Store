@@ -82,5 +82,4 @@ https://github.com/user-attachments/assets/ecd1033d-d9c2-4c7b-87b4-0359d30bfda1
 ## Authors
 Silvana Jaramillo
 <p><a href="https://linkedin.com/in/silvana-jaramillo" target="blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /> </a></p>
-Alejandro Caballero
-<p><a href="https://www.linkedin.com/in/alejandro-caballero-granado" target="blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /> </a></p>
+
